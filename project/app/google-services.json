@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "736927824510",
+    "project_id": "fitbites-ee619",
+    "storage_bucket": "fitbites-ee619.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736927824510:android:bfb4bdbe2ea042a6bfb62f",
+        "android_client_info": {
+          "package_name": "me.seg.fitbites"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736927824510-oulla8a0cql3vd4lo3o5v88s9gei6c49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfI2lxSg8RDwEa5dI0OUZIHvU7IlVxnHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736927824510-oulla8a0cql3vd4lo3o5v88s9gei6c49.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
