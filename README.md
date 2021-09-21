@@ -11,4 +11,6 @@ Alexandra Tulchinsky 300165864
 
 Ritvik Johar 300074686
 
+**Note:** Kyle Dulce has 2 github accounts, (KyleDulce-UO - The account with the GitHub Student Developer Pack and hosts the private repo, KyleDulce - My Main/Personal Github account). They both belong to Kyle Dulce but KyleDulce will be making the bulk of commits.
+
 Thank you!!!!
