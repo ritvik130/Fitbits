@@ -2,17 +2,175 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TableLayout
+        android:id="@+id/loginLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="0">
+
+        <TableRow
+            android:id="@+id/loginRow"
+            android:layout_width="match_parent"
+            android:layout_height="60pt"
+            android:minHeight="45pt"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="40pt"
+                android:layout_gravity="bottom|center_horizontal"
+                android:fontFamily="@font/italianno"
+                android:text="@string/app_name"
+                android:textColor="#228ADD"
+                android:textSize="96sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/welcomeRow"
+            android:layout_width="match_parent"
+            android:layout_height="40pt"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/welcomeMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:text="@string/welcomeUser" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="30pt">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:orientation="vertical"
+                android:text="@string/loginTxt"
+                android:textColor="#4A3E3E"
+                android:textSize="24sp"
+                android:translationX="-100dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="15pt">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="10pt"
+                android:layout_gravity="center_horizontal|bottom"
+                android:orientation="vertical"
+                android:text="@string/username"
+                android:textSize="13sp"
+                android:translationX="-90dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="190dp"
+            android:layout_height="40pt">
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="132dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="16sp"
+                android:translationX="-30dp"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="10pt"
+                android:layout_gravity="center_horizontal|bottom"
+                android:orientation="vertical"
+                android:text="@string/password"
+                android:textSize="13sp"
+                android:translationX="-90dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="132dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textSize="16sp"
+                android:translationX="-30dp"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="18pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="@string/loginTxt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="16pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="@string/signup"
+                android:visibility="visible"
+                android:clickable = "true"/>
+        </TableRow>
+
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
