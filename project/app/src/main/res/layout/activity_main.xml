@@ -141,7 +141,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/loginButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
@@ -162,7 +162,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/signUpLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
