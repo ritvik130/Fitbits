@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Fitbites</string>
+    <string name = "welcomeUser">Welcome to Fitbites!</string>
+    <string name = "loginTxt">Login</string>
+    <string name = "username">Username:</string>
+    <string name = "password">Password:</string>
+    <string name = "signup">Sign up!</string>
+    <string name = "signup2">Sign Up</string>
 </resources>
