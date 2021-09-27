@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Fitbites</string>
     <string name = "welcomeUser">Welcome to Fitbites!</string>
     <string name = "loginTxt">Login</string>
@@ -6,4 +7,14 @@
     <string name = "password">Password:</string>
     <string name = "signup">Sign up!</string>
     <string name = "signup2">Sign Up</string>
+
+
+    <string name = "title">WELCOME ADMIN!</string>
+    <string name = "title2">You are logged in as Admin</string>
+    <string name = "title3">What would you like to do?</string>
+    <string name = "ManageClasses">Manage Classes</string>
+    <string name = "DeleteAccounts">Delete Account</string>
+    <string name = "NewClasses">Add New Classes</string>
+    <string name = "ReportUsers">Report Users</string>
+
 </resources>
