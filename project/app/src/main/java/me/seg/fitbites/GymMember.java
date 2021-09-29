@@ -1,5 +1,7 @@
 package me.seg.fitbites;
 
+import java.util.HashMap;
+
 public class GymMember extends UserData {
 
 
@@ -9,6 +11,15 @@ public class GymMember extends UserData {
 
     public void viewEnrolledClasses(){
         // gives a list of classes enrolled by the member
+    }
+
+    @Override
+    public HashMap<String, Object> toHashMap() {
+        HashMap<String, Object> result = super.toHashMap();
+
+        //none to add
+
+        return result;
     }
 
 }

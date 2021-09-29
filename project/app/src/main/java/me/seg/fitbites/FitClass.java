@@ -1,5 +1,7 @@
 package me.seg.fitbites;
 
+import java.util.HashMap;
+
 public class FitClass {
     private String className;
     private String description;
@@ -61,6 +63,15 @@ public class FitClass {
     public void dropClass(FitClass cla){
         // drops class
         System.out.println(cla+"has been dropped");
+    }
+
+    public HashMap<String, Object> toHashmap() {
+        HashMap<String, Object> result = new HashMap<>();
+
+        result.put("Name", className);
+        result.put("Description", description);
+
+        return result;
     }
 
 }

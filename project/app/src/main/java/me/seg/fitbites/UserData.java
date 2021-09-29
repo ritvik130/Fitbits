@@ -1,5 +1,9 @@
 package me.seg.fitbites;
 
+import com.google.firebase.firestore.auth.User;
+
+import java.util.HashMap;
+
 public abstract class UserData {
     protected String firstName;
     protected String lastName;
@@ -71,4 +75,21 @@ public abstract class UserData {
         // access to admin
 
     }
+
+    public HashMap<String, Object> toHashMap() {
+        HashMap<String, Object> result = new HashMap<>();
+
+        result.put("FirstName", firstName);
+        result.put("LastName", lastName);
+        result.put("Username", userName);
+        result.put("Age", age);
+        result.put("Address", address);
+
+        return result;
+    }
+
+    public static UserData getUserDataFromHashmap(HashMap<String, Object> mapping) {
+
+    }
+
 }

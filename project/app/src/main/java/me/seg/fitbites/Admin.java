@@ -8,5 +8,4 @@ public class Admin extends UserData {
         super(firstName,lastName,"admin","admin123",age,address);
     }
 
-
 }
