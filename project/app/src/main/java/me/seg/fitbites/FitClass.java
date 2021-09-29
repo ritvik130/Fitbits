@@ -44,7 +44,7 @@ public class FitClass {
         setClassName(className);
         setDescription(description);
     }
-    public FitClass searchClass(String typed){
+    public FitClass searchClass(String className){
         // returns the searched class
         return null;
     }

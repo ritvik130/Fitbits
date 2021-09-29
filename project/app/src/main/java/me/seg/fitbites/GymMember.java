@@ -4,7 +4,7 @@ public class GymMember extends UserData {
 
 
     public GymMember(String firstName, String lastName, String userName, String password, String address, int age){
-        super();
+        super(firstName, lastName, userName, password, age, address);
     }
 
     public void viewEnrolledClasses(){

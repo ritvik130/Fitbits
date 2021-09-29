@@ -5,9 +5,17 @@ public abstract class UserData {
     protected String lastName;
     protected String userName;
     protected String password;
-    protected String userId;
     protected int age;
     protected String address;
+
+    public UserData(String firstName,String lastName,String userName, String password,int age,String address){
+        this.firstName=firstName;
+        this.address=address;
+        this.lastName=lastName;
+        this.password=password;
+        this.userName=userName;
+        this.age=age;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -41,13 +49,7 @@ public abstract class UserData {
         this.password = password;
     }
 
-    public String getUserId() {
-        return userId;
-    }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
     public String getAddress() {
         return address;
     }
