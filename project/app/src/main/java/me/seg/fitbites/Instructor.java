@@ -11,4 +11,6 @@ public class Instructor extends UserData {
         super(uid, firstName, lastName, userName, address, age);
         this.label = INSTRUCTOR_LABEL;
     }
+
+    public Instructor() {}
 }

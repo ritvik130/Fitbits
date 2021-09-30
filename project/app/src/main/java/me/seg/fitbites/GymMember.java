@@ -12,6 +12,8 @@ public class GymMember extends UserData {
         this.label = GYM_MEMBER_LABEL;
     }
 
+    public GymMember() {}
+
     public void viewEnrolledClasses(){
         // gives a list of classes enrolled by the member
     }

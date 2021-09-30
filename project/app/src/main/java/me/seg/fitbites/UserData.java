@@ -7,7 +7,7 @@ import java.util.Map;
 
 public abstract class UserData {
 
-    public static final String USERTYPE_DATABASE_LABEL = "UserType";
+    public static final String USERTYPE_DATABASE_LABEL = "label";
 
     protected String uid;
     protected String firstName;
@@ -17,7 +17,7 @@ public abstract class UserData {
     protected String address;
     protected String label = "null";
 
-    public UserData(String uid, String firstName,String lastName,String userName, String address, int age){
+    public UserData(String uid, String firstName, String lastName, String userName, String address, int age){
         this.uid = uid;
         this.firstName=firstName;
         this.address=address;
@@ -25,6 +25,8 @@ public abstract class UserData {
         this.userName=userName;
         this.age=age;
     }
+
+    public UserData() {}
 
     public String getUid() {return uid;}
 
@@ -67,6 +69,8 @@ public abstract class UserData {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public String getLabel() { return label; }
 
     public void removeAccount(){
         // removes the account of a user either instructor or member
