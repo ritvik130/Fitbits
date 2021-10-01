@@ -17,4 +17,13 @@
     <string name = "NewClasses">Add New Classes</string>
     <string name = "ReportUsers">Report Users</string>
 
+    <string name = "AddNewClass">Add New Class</string>
+    <string name = "NewClassName">New class name: *required*</string>
+    <string name = "ClassDescription">Class description: *required*</string>
+    <string name = "CreateClassBTN">Create Class!</string>
+    <string name = "Enter1"></string>
+    <string name = "Enter2"></string>
+
+
+
 </resources>
