@@ -13,10 +13,11 @@
         <entry key="..\:/Users/jason/seg2105/seg2105/project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/jason/seg2105/seg2105/project/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/jason/seg2105/seg2105/project/app/src/main/res/layout/sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/activity_main.xml" value="0.21875" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+<component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
