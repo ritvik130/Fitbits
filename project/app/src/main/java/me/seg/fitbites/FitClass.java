@@ -8,6 +8,7 @@ public class FitClass {
         this.className = className;
         this.description = description;
 
+
     }
 
     public String getClassName() {
