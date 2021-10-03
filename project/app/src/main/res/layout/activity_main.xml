@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background_gradient">
+
 
     <TableLayout
         android:id="@+id/loginLayout"
@@ -26,7 +28,7 @@
                 android:layout_gravity="bottom|center_horizontal"
                 android:fontFamily="@font/italianno"
                 android:text="@string/app_name"
-                android:textColor="#228ADD"
+                android:textColor="@color/white"
                 android:textSize="96sp" />
 
         </TableRow>
@@ -39,6 +41,7 @@
 
             <TextView
                 android:id="@+id/welcomeMsg"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|top"
@@ -57,7 +60,7 @@
                 android:layout_gravity="bottom|center_horizontal"
                 android:orientation="vertical"
                 android:text="@string/loginTxt"
-                android:textColor="#4A3E3E"
+                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:translationX="-100dp" />
 
@@ -75,6 +78,7 @@
                 android:orientation="vertical"
                 android:text="@string/username"
                 android:textSize="13sp"
+                android:textColor="@color/white"
                 android:translationX="-90dp" />
 
         </TableRow>
@@ -90,6 +94,8 @@
                 android:layout_gravity="center_horizontal|top"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:outlineAmbientShadowColor="#020202"
+                android:textColor="#090808"
                 android:textSize="16sp"
                 android:translationX="-30dp"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -159,16 +165,16 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="45dp">
 
             <TextView
                 android:id="@+id/signUpLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
+                android:clickable="true"
                 android:text="@string/signup"
-                android:visibility="visible"
-                android:clickable = "true"/>
+                android:visibility="visible" />
         </TableRow>
 
     </TableLayout>
