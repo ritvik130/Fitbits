@@ -1,8 +1,16 @@
 package me.seg.fitbites;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Instructor extends UserData {
 
-    public Instructor(String firstName, String lastName, String userName, String password, String address, int age){
-        super(firstName, lastName, userName, password, age, address);
+    public static final String INSTRUCTOR_LABEL = "INSTRUCTOR";
+
+    public Instructor(String uid, String firstName, String lastName, String userName, String address, int age){
+        super(uid, firstName, lastName, userName, address, age);
+        this.label = INSTRUCTOR_LABEL;
     }
+
+    public Instructor() {}
 }
