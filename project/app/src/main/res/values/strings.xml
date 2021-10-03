@@ -17,4 +17,12 @@
     <string name = "NewClasses">Add New Classes</string>
     <string name = "ReportUsers">Report Users</string>
 
+    <!-- Instructor Screen -->
+    <string name = "Inst_title">Welcome Instructor\nx!</string>
+    <string name = "Inst_addBtn">Add Class</string>
+    <string name = "Inst_editBtn">Edit Class</string>
+    <string name = "Inst_DeleteBtn">Delete Class</string>
+    <string name = "Inst_noClass">You have no Scheduled Classes!</string>
+
+
 </resources>
