@@ -1,21 +1,34 @@
 package me.seg.fitbites;
 
+import com.google.firebase.firestore.auth.User;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public abstract class UserData {
+
+    public static final String USERTYPE_DATABASE_LABEL = "label";
+
+    protected String uid;
     protected String firstName;
     protected String lastName;
     protected String userName;
-    protected String password;
     protected int age;
     protected String address;
+    protected String label = "null";
 
-    public UserData(String firstName,String lastName,String userName, String password,int age,String address){
+    public UserData(String uid, String firstName, String lastName, String userName, String address, int age){
+        this.uid = uid;
         this.firstName=firstName;
         this.address=address;
         this.lastName=lastName;
-        this.password=password;
         this.userName=userName;
         this.age=age;
     }
+
+    public UserData() {}
+
+    public String getUid() {return uid;}
 
     public String getFirstName() {
         return firstName;
@@ -41,15 +54,6 @@ public abstract class UserData {
         this.userName = userName;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-
     public String getAddress() {
         return address;
     }
@@ -66,9 +70,12 @@ public abstract class UserData {
         this.age = age;
     }
 
-    public void removeAccount(UserData user){
+    public String getLabel() { return label; }
+
+    public void removeAccount(){
         // removes the account of a user either instructor or member
         // access to admin
 
     }
+
 }

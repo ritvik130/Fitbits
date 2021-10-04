@@ -3,9 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/lekev/Documents/Work/SEG2105/Term Project/seg2105/project/app/src/main/res/drawable/background_gradient.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/lekev/Documents/Work/SEG2105/Term Project/seg2105/project/app/src/main/res/drawable/custom_btn.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/lekev/Documents/Work/SEG2105/Term Project/seg2105/project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/lekev/Documents/Work/SEG2105/Term Project/seg2105/project/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/lekev/Documents/Work/SEG2105/Term Project/seg2105/project/app/src/main/res/layout/activity_option_screen.xml" value="0.264" />
+        <entry key="..\:/Users/lekev/Documents/Work/SEG2105/Term Project/seg2105/project/app/src/main/res/layout/admin_login.xml" value="0.264" />
+        <entry key="..\:/Users/lekev/Documents/Work/SEG2105/Term Project/seg2105/project/app/src/main/res/layout/search_user_screen.xml" value="0.2" />
+        <entry key="..\:/Users/lekev/Documents/Work/SEG2105/Term Project/seg2105/project/app/src/main/res/layout/sign_up.xml" value="0.2" />
         <entry key="..\:/DriveDocuments/GitHub/seg2105/project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.15885416666666666" />
         <entry key="..\:/DriveDocuments/GitHub/seg2105/project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15885416666666666" />
         <entry key="..\:/DriveDocuments/GitHub/seg2105/project/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/alex_/Documents/GitHub/seg2105/project/app/src/main/res/drawable/border_text_box.xml" value="0.2490740740740741" />
+        <entry key="..\:/Users/alex_/Documents/GitHub/seg2105/project/app/src/main/res/drawable/for_admin.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/alex_/Documents/GitHub/seg2105/project/app/src/main/res/drawable/rectangle.xml" value="0.2557291666666667" />
+        <entry key="..\:/Users/alex_/Documents/GitHub/seg2105/project/app/src/main/res/layout/activity_main.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/alex_/Documents/GitHub/seg2105/project/app/src/main/res/layout/add_new_class.xml" value="0.268" />
+        <entry key="..\:/Users/alex_/Documents/GitHub/seg2105/project/app/src/main/res/layout/admin_login.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/alex_/Documents/GitHub/seg2105/project/app/src/main/res/layout/edit_class.xml" value="0.2128623188405797" />
+        <entry key="..\:/Users/alex_/Documents/GitHub/seg2105/project/app/src/main/res/layout/sign_up.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/jason/seg2105/seg2105/project/app/src/main/res/drawable/filedborder.xml" value="0.2703125" />
         <entry key="..\:/Users/jason/seg2105/seg2105/project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/jason/seg2105/seg2105/project/app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -14,10 +30,11 @@
         <entry key="app/src/main/res/layout/activity_class_screen.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26721014492753625" />
         <entry key="app/src/main/res/layout/sign_up.xml" value="0.26721014492753625" />
+        <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/activity_main.xml" value="0.21875" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+<component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
