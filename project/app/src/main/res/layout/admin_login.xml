@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient">
 
     <TextView
         android:id="@+id/titleAdmin"
         android:layout_width="244dp"
         android:layout_height="28dp"
         android:text="@string/title"
-        android:textColor="#000080"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,7 +26,7 @@
         android:layout_width="209dp"
         android:layout_height="21dp"
         android:text="@string/title2"
-        android:textColor="#000080"
+        android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +40,7 @@
         android:layout_width="209dp"
         android:layout_height="21dp"
         android:text="@string/title3"
-        android:textColor="#000080"
+        android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

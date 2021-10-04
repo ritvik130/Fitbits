@@ -1,36 +1,26 @@
 package me.seg.fitbites;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FitClass {
-    private String className;
-    private String description;
 
-    public FitClass(String className, String description) {
-        this.className = className;
-        this.description = description;
+    private String uid;
+    //The uid of the FitClass type it belongs to
+    private String FitClassTypeUid;
 
+    public FitClass(String uid, String typeuid) {
+        this.uid = uid;
+        this.FitClassTypeUid = typeuid;
     }
 
-    public String getClassName() {
-        return className;
-    }
-
-    public void setClassName(String className) {
-        this.className = className;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public String getUid() { return uid; }
+    public String getClassTypeUid(){ return FitClassTypeUid; };
 
     public static FitClass createClass(){
         // creates a new Class
         // access to admin
         return null;
-
     }
 
     public void deleteClass(FitClass cla){
@@ -41,8 +31,6 @@ public class FitClass {
     public void editClass(String className, String description){
         // edits a class
         // access to admin
-        setClassName(className);
-        setDescription(description);
     }
     public FitClass searchClass(String className){
         // returns the searched class
