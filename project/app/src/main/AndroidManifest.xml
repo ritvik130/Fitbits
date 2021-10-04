@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitbites">
         <activity
+            android:name=".ChangeClassScreen"
+            android:exported="true" />
+        <activity
+            android:name=".ui.login.ClassScreen"
+            android:exported="true"
+            android:label="@string/title_activity_class_screen" />
             android:name=".OptionScreen"
             android:exported="true" />
         <activity android:name=".MainActivity">
