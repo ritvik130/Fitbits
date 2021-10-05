@@ -39,7 +39,7 @@ public class AuthManager {
 
     public void validateUser(String email, String password, OnTaskComplete<LoginResult> onComplete) {
         //sign in user
-        if(email.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin123")) {
+        if(email.equalsIgnoreCase("admin") && password.equals("admin123")) {
             currentLogIn = "admin";
             currentLogInData = new Admin();
             onComplete.onComplete(new LoginResult(true, "Admin"));
