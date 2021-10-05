@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:autofillHints="Class Name"
-    tools:context=".ChangeClassScreen">
+    tools:context=".ChangeClassScreen"
+    android:background="@drawable/background_gradient">>
 
     <Button
         android:id="@+id/button"
