@@ -7,15 +7,17 @@ public class FitClass {
 
     private String uid;
     //The uid of the FitClass type it belongs to
-    private String FitClassTypeUid;
+    private String fitClassTypeUid;
 
     public FitClass(String uid, String typeuid) {
         this.uid = uid;
-        this.FitClassTypeUid = typeuid;
+        this.fitClassTypeUid = typeuid;
     }
 
+    public FitClass() {}
+
     public String getUid() { return uid; }
-    public String getClassTypeUid(){ return FitClassTypeUid; };
+    public String getFitClassTypeUid(){ return fitClassTypeUid; };
 
     public static FitClass createClass(){
         // creates a new Class

@@ -5,6 +5,8 @@ import com.google.firebase.firestore.auth.User;
 import java.util.HashMap;
 import java.util.Map;
 
+import me.seg.fitbites.firebase.AuthManager;
+
 public abstract class UserData {
 
     public static final String USERTYPE_DATABASE_LABEL = "label";
@@ -16,14 +18,18 @@ public abstract class UserData {
     protected int age;
     protected String address;
     protected String label = "null";
+    protected String password;
+    protected String email;
 
-    public UserData(String uid, String firstName, String lastName, String userName, String address, int age){
+    public UserData(String uid, String firstName, String lastName, String userName, String address, int age, String password, String email){
         this.uid = uid;
         this.firstName=firstName;
         this.address=address;
         this.lastName=lastName;
         this.userName=userName;
         this.age=age;
+        this.password = password;
+        this.email = email;
     }
 
     public UserData() {}
@@ -72,10 +78,13 @@ public abstract class UserData {
 
     public String getLabel() { return label; }
 
+    public String getPassword() { return password; }
+    public String getEmail() { return email; }
+
     public void removeAccount(){
         // removes the account of a user either instructor or member
         // access to admin
-
+        AuthManager.getInstance().deleteAccount(this);
     }
 
 }

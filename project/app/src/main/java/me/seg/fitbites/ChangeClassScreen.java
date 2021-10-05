@@ -10,7 +10,7 @@ public class ChangeClassScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_classScreen);
+        setContentView(R.layout.activity_change_class_screen);
         ActionBar actionBar= getSupportActionBar();
         actionBar.setTitle("Change Class");
     }
