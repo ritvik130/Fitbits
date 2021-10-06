@@ -1,34 +1,34 @@
-//package me.seg.fitbites.ui.login;
-//
-//import android.app.Activity;
-//
-//import androidx.lifecycle.Observer;
-//import androidx.lifecycle.ViewModelProvider;
-//
-//import android.os.Bundle;
-//
-//import androidx.annotation.Nullable;
-//import androidx.annotation.StringRes;
-//import androidx.appcompat.app.AppCompatActivity;
-//
-//import android.text.Editable;
-//import android.text.TextWatcher;
-//import android.view.KeyEvent;
-//import android.view.View;
-//import android.view.inputmethod.EditorInfo;
-//import android.widget.Button;
-//import android.widget.EditText;
-//import android.widget.ProgressBar;
-//import android.widget.TextView;
-//import android.widget.Toast;
-//
-//import me.seg.fitbites.R;
-//import me.seg.fitbites.ui.login.LoginViewModel;
-//import me.seg.fitbites.ui.login.LoginViewModelFactory;
+package me.seg.fitbites.ui.login;
+
+import android.app.Activity;
+
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
+import android.os.Bundle;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import me.seg.fitbites.R;
+import me.seg.fitbites.ui.login.LoginViewModel;
+import me.seg.fitbites.ui.login.LoginViewModelFactory;
 //import me.seg.fitbites.databinding.ActivityClassScreenBinding;
-//
-//public class ClassScreen extends AppCompatActivity {
-//
+
+public class LoginActivity extends AppCompatActivity {
+
 //    private LoginViewModel loginViewModel;
 //    private ActivityClassScreenBinding binding;
 //
@@ -133,4 +133,4 @@
 //    private void showLoginFailed(@StringRes Integer errorString) {
 //        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
 //    }
-//}
+}
