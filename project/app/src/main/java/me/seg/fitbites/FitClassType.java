@@ -11,6 +11,8 @@ public class FitClassType {
         this.description = description;
     }
 
+    public FitClassType() {}
+
     public String getUid() {
         return uid;
     }

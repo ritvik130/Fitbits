@@ -14,7 +14,7 @@ import me.seg.fitbites.*;
 
 public class FirestoreDatabase {
 
-    public static FirestoreDatabase instance;
+    private static FirestoreDatabase instance;
 
     //Console debug log label
     public static final String LOG_LABEL = "Database";
@@ -26,7 +26,14 @@ public class FirestoreDatabase {
 
     FirebaseFirestore db;
 
-    public FirestoreDatabase() {
+    public static FirestoreDatabase getInstance() {
+        if(instance == null) {
+            instance = new FirestoreDatabase();
+        }
+        return instance;
+    }
+
+    private FirestoreDatabase() {
 
         if(instance != null) {
             db = instance.db;
@@ -202,6 +209,7 @@ public class FirestoreDatabase {
     }
 
     public void setUserData(UserData data) {
+        Log.i("Test", "Adding to database");
         db.collection(COLLECTION_USER_INFO)
                 .document(data.getUid())
                 .set(data)
@@ -235,7 +243,7 @@ public class FirestoreDatabase {
     }
 
     public void setFitClassType(FitClassType data) {
-        db.collection(COLLECTION_CLASSES)
+        db.collection(COLLECTION_CLASS_TYPES)
                 .document(data.getUid())
                 .set(data)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -248,5 +256,23 @@ public class FirestoreDatabase {
                         }
                     }
                 });
+    }
+
+    public void deleteUserData(UserData data) {
+        db.collection(COLLECTION_USER_INFO)
+                .document(data.getUid())
+                .delete();
+    }
+
+    public void deleteFitClass(FitClass data) {
+        db.collection(COLLECTION_CLASSES)
+                .document(data.getUid())
+                .delete();
+    }
+
+    public void deleteFitClassType(FitClassType data) {
+        db.collection(COLLECTION_CLASS_TYPES)
+                .document(data.getUid())
+                .delete();
     }
 }
