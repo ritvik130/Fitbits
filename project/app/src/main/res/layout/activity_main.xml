@@ -10,9 +10,11 @@
 
     <TableLayout
         android:id="@+id/loginLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:stretchColumns="0">
+        android:layout_width="413dp"
+        android:layout_height="739dp"
+        android:stretchColumns="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:id="@+id/loginRow"
@@ -41,11 +43,11 @@
 
             <TextView
                 android:id="@+id/welcomeMsg"
-                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|top"
-                android:text="@string/welcomeUser" />
+                android:text="@string/welcomeUser"
+                android:textColor="@color/white" />
 
         </TableRow>
 
@@ -77,8 +79,8 @@
                 android:layout_gravity="center_horizontal|bottom"
                 android:orientation="vertical"
                 android:text="@string/username"
-                android:textSize="13sp"
                 android:textColor="@color/white"
+                android:textSize="13sp"
                 android:translationX="-90dp" />
 
         </TableRow>
@@ -174,7 +176,8 @@
                 android:layout_gravity="bottom|center_horizontal"
                 android:clickable="true"
                 android:text="@string/signup"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:onClick = "openSignUp"/>
         </TableRow>
 
     </TableLayout>
