@@ -89,4 +89,13 @@
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="9dp" />
 
+    <Button
+        android:id="@+id/SearchButton"
+        android:layout_width="79dp"
+        android:layout_height="31dp"
+        android:text="Search"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="107dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
