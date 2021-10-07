@@ -4,15 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class OptionScreen extends AppCompatActivity {
+public class CancelClass extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manage_class_screen);
+        setContentView(R.layout.activity_cancel_class);
     }
-
-
-
-
 }

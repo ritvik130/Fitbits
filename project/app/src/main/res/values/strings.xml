@@ -5,10 +5,28 @@
     <string name="loginTxt">Login</string>
     <string name="username">Username:</string>
     <string name="password">Password:</string>
-    <string name="signup">Sign up!</string>
-    <string name="signup2">Sign Up</string>
+    <string name="signup">Sign up for Instructor!</string>
+    <string name="signup2">Sign up for Member!</string>
+    <string name="signup3">Sign up!</string>
+    <string name="title_activity_class_screen">ClassScreen</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name = "firstname">Firstname:</string>
+    <string name = "lastname">Lastname:</string>
+    <string name = "address">Address: </string>
+    <string name = "email">Email: </string>
 
 
+
+
+
+    <string name = "age">Age:</string>
     <string name="title">WELCOME ADMIN!</string>
     <string name="title2">You are logged in as Admin</string>
     <string name="title3">What would you like to do?</string>
@@ -17,13 +35,20 @@
     <string name="NewClasses">Add New Classes</string>
     <string name="ReportUsers">Report Users</string>
 
-    <string name = "AddNewClass">Add New Class</string>
-    <string name = "NewClassName">New class name: *required*</string>
-    <string name = "ClassDescription">Class description: *required*</string>
-    <string name = "CreateClassBTN">Create Class!</string>
-    <string name = "Enter1"></string>
-    <string name = "Enter2"></string>
+    <string name="AddNewClass">Add New Class</string>
+    <string name="NewClassName">New class name: *required*</string>
+    <string name="ClassDescription">Class description: *required*</string>
+    <string name="CreateClassBTN">Create Class!</string>
+    <string name="Enter1"></string>
+    <string name="Enter2"></string>
 
+
+    <!-- Instructor Screen -->
+    <string name = "Inst_title">Welcome Instructor\nx!</string>
+    <string name = "Inst_addBtn">Add Class</string>
+    <string name = "Inst_editBtn">Edit Class</string>
+    <string name = "Inst_DeleteBtn">Delete Class</string>
+    <string name = "Inst_noClass">You have no Scheduled Classes!</string>
 
 
 </resources>
