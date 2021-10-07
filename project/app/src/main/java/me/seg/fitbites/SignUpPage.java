@@ -86,7 +86,7 @@ public class SignUpPage extends AppCompatActivity {
                             startActivity(intent);
 
 
-                        } else if (s2.equals("Sign up for Member!")) {//temp send to same screen
+                        } else if (s2.equals("Sign up for Member!")) {//TODO temp send to same screen
                             Intent intent = new Intent(current, InstructorWelcome.class);
                             startActivity(intent);
 
