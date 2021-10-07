@@ -64,7 +64,8 @@
                 android:text="@string/loginTxt"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                android:translationX="-100dp" />
+                android:translationX="-100dp"
+                android:textStyle="bold"/>
 
         </TableRow>
 
@@ -81,7 +82,8 @@
                 android:text="@string/username"
                 android:textColor="@color/white"
                 android:textSize="13sp"
-                android:translationX="-90dp" />
+                android:translationX="-90dp"
+                android:textStyle="bold"/>
 
         </TableRow>
 
@@ -115,7 +117,8 @@
                 android:orientation="vertical"
                 android:text="@string/password"
                 android:textSize="13sp"
-                android:translationX="-90dp" />
+                android:translationX="-90dp"
+                android:textStyle="bold"/>
 
         </TableRow>
 
@@ -177,7 +180,10 @@
                 android:clickable="true"
                 android:text="@string/signup"
                 android:visibility="visible"
-                android:onClick = "openSignUp"/>
+                android:onClick = "openSignUp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
         </TableRow>
 
     </TableLayout>
