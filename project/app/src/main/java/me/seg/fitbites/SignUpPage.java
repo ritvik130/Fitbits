@@ -1,5 +1,6 @@
 package me.seg.fitbites;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -17,11 +18,14 @@ import me.seg.fitbites.firebase.AuthManager;
 import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class SignUpPage extends AppCompatActivity {
     AlertDialog error;
     Button signUp;
     TextView name, age, username, password, firstName, lastName, address, email;
+    private final String emailValidationPattern = "[a-z0-9!#$%&\'*+/=?^_\'{|}~-]+(?:.[a-z0-9!#$%&\'*+/=?^_\'{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,35 +52,58 @@ public class SignUpPage extends AppCompatActivity {
                     AuthManager.getInstance().createUser(username.getText().toString(), password.getText().toString(), new OnTaskComplete<AuthManager.LoginResult>() {
                         @Override
                         public void onComplete(AuthManager.LoginResult authResult) {
-                            UserData userData = new UserData(authResult.getUserData(),firstName.getText.toString(),
-                                    lastName.getText.toString(), username.getText().toString(),address.getText.toString(),
-                                    age.getText.toString(), password.getText.toString(), email.getText.toString());
+
+                            UserData userData = new UserData(authResult.getUserData(),firstName.getText().toString(),
+                                    lastName.getText().toString(), username.getText().toString(),address.getText().toString(),
+                                    age.getText().toString(), password.getText().toString(), email.getText().toString());
+
                             FirestoreDatabase.getInstance().setUserData(userData);
                             AuthManager.getInstance().setCurrentLogInData(userData);
 
+                            //takes to new screen if clicked admin, instructor or memeber
+
 
                             if (authResult==null){
-                                //notify user
-                            }
+                                //notify user to re-enter info
+                                reEnter();
 
 
-                        }
+                                    }
+                                }
                     });
                 }
+                else{
+                    reEnter();
 
 
-
-            }
-
-            private boolean validateEmail() {
-                String e = email.getText().toString().trim();
-                if (!Patterns.EMAIL_ADDRESS.matcher(e).matches()) {
-                    username.setError("Not valid email address");
-                    return false;
-                } else {
-                    return true;
                 }
+
             }
+
+            @SuppressLint("SetTextI18n")
+            public  void reEnter(){
+                firstName.setText("Try Again");
+                lastName.setText("Try Again");
+                age.setText("Try Again");
+                username.setText("Try Again");
+                password.setText("Try Again");
+                address.setText("Try Again");
+                email.setText("Try Again");
+
+            }
+
+                public boolean validateEmail(){
+                    String emailTested = email.getText().toString().trim();
+
+                    boolean isValid = false;
+
+                        Pattern p = Pattern.compile(emailValidationPattern);
+                        Matcher m = p.matcher(emailTested);
+                        isValid = m.find();
+
+                    return isValid;
+                }
+
 
             private boolean checkInfoFilled(){
                 if(username.getText().length()<1||name.getText().length()<1||age.getText().length()<1||password.getText().length()<1){
