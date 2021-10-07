@@ -7,7 +7,7 @@ import java.util.Map;
 
 import me.seg.fitbites.firebase.AuthManager;
 
-public abstract class UserData {
+public class UserData {
 
     public static final String USERTYPE_DATABASE_LABEL = "label";
 
@@ -15,13 +15,13 @@ public abstract class UserData {
     protected String firstName;
     protected String lastName;
     protected String userName;
-    protected int age;
+    protected String age;
     protected String address;
     protected String label = "null";
     protected String password;
     protected String email;
 
-    public UserData(String uid, String firstName, String lastName, String userName, String address, int age, String password, String email){
+    public UserData(String uid, String firstName, String lastName, String userName, String address, String age, String password, String email){
         this.uid = uid;
         this.firstName=firstName;
         this.address=address;
@@ -68,11 +68,11 @@ public abstract class UserData {
         this.address = address;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
