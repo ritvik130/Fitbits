@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         user = findViewById(R.id.editTextTextPersonName);
         pass = findViewById(R.id.editTextTextPassword);
         login = findViewById(R.id.loginButton);
-        signup = findViewById(R.id.signUpLabel);
+        signup = findViewById(R.id.button_signUp);
 
         final MainActivity current = this;
         login.setOnClickListener(new View.OnClickListener() {
@@ -63,14 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         signup.setOnClickListener(new View.OnClickListener()
-
             {
                 @Override
                 public void onClick (View v){
-                Intent intent = new Intent(current, SignUpPage.class);
+                Intent intent = new Intent(getApplicationContext(), SignUpPage.class);
                 startActivity(intent);
             }
-
             });
 
         }
