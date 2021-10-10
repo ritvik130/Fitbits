@@ -7,7 +7,7 @@ import java.util.Map;
 
 import me.seg.fitbites.firebase.AuthManager;
 
-public class UserData {
+public abstract class UserData {
 
     public static final String USERTYPE_DATABASE_LABEL = "label";
 

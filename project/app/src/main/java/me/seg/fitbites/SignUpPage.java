@@ -49,43 +49,59 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
     }
 
     public void onClick(View v) {
-        String s="";
+        //String s="";
 
-        switch (v.getId()) {
-            case R.id.signUpButton:
-                s = signUpInstructor.getText().toString();
-                break;
+//        switch (v.getId()) {
+//            case R.id.signUpButton:
+//                s = signUpInstructor.getText().toString();
+//                break;
+//
+//            case R.id.signUpButton2:
+//                s = signUpMember.getText().toString();
+//                break;
+//        }
 
-            case R.id.signUpButton2:
-                s = signUpMember.getText().toString();
-                break;
-        }
-        final String s2=s;
+        //final String s2=s;
         final SignUpPage current=this;
 
         if (validateEmail() && checkInfoFilled() && checkAge()) {
 
-            AuthManager.getInstance().createUser(username.getText().toString(), password.getText().toString(), new OnTaskComplete<AuthManager.LoginResult>() {
+            AuthManager.getInstance().createUser(email.getText().toString().trim(), password.getText().toString(), new OnTaskComplete<AuthManager.LoginResult>() {
                 @Override
                 public void onComplete(AuthManager.LoginResult authResult) {
-                    if (authResult == null) {
+                    if (authResult == null || !authResult.isSuccessful()) {
                         //notify user to re-enter info
                         reEnter();
 
                     } else {
-                        UserData userData = new UserData(authResult.getUserData(), firstName.getText().toString(),
+//                        UserData userData = new UserData(authResult.getUserData(), firstName.getText().toString(),
+//                                lastName.getText().toString(), username.getText().toString(), address.getText().toString(),
+//                                age.getText().toString(), password.getText().toString(), email.getText().toString());
+                        UserData userData = null;
+
+                        if(v.getId() == R.id.signUpButton) {
+                            //is instructor
+                            userData = new Instructor(authResult.getUserData(), firstName.getText().toString(),
                                 lastName.getText().toString(), username.getText().toString(), address.getText().toString(),
                                 age.getText().toString(), password.getText().toString(), email.getText().toString());
+                        } else {
+                            //is a member
+                            userData = new GymMember(authResult.getUserData(), firstName.getText().toString(),
+                                    lastName.getText().toString(), username.getText().toString(), address.getText().toString(),
+                                    age.getText().toString(), password.getText().toString(), email.getText().toString());
+                        }
 
                         FirestoreDatabase.getInstance().setUserData(userData);
                         AuthManager.getInstance().setCurrentLogInData(userData);
 
-                        if (s2.equals("Sign up for Instructor!")) {
+                        if (v.getId() == R.id.signUpButton) {
+                            //is instructor
                             Intent intent = new Intent(current, InstructorWelcome.class);
                             startActivity(intent);
 
 
-                        } else if (s2.equals("Sign up for Member!")) {//TODO temp send to same screen
+                        } else {//TODO temp send to same screen
+                            //is member
                             Intent intent = new Intent(current, InstructorWelcome.class);
                             startActivity(intent);
 
@@ -105,14 +121,12 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
 
     @SuppressLint("SetTextI18n")
     public void reEnter() {
-        firstName.setText("Try Again");
-        lastName.setText("Try Again");
-        age.setText("Try Again");
-        username.setText("Try Again");
-        password.setText("Try Again");
-        address.setText("Try Again");
-        email.setText("Try Again");
+        AlertDialog.Builder badinput = new AlertDialog.Builder(SignUpPage.this);
+        badinput.setTitle("*Error*");
+        badinput.setMessage("There was a problem with the information you put in, did you check that your password has at least 6 characters? A account already exists? Email address does not exist?");
 
+        AlertDialog e = badinput.create();
+        e.show();
     }
 
     public boolean validateEmail() {

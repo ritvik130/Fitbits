@@ -13,6 +13,9 @@
             android:name=".CancelClass"
             android:exported="true" />
         <activity
+            android:name=".InstructorWelcome"
+            android:exported="true" />
+        <activity
             android:name=".ChangeClassScreen"
             android:exported="true" />
 <!--        <activity-->
@@ -26,7 +29,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name = ".SignUpPage"></activity>
+        <activity
+            android:name=".SignUpPage"
+            android:exported="true" />
+        <activity
+            android:name=".SearchUser"
+            android:exported="true" />
+        <activity
+            android:name=".AdminLogin"
+            android:exported="true" />
+        <activity
+            android:name=".AddNewClass"
+            android:exported="true" />
+        <activity
+            android:name=".ManageClassScreen"
+            android:exported="true" />
 
     </application>
 

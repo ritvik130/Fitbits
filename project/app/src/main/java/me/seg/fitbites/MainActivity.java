@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 AuthManager.getInstance().validateUser(user.getText().toString(), pass.getText().toString(), new OnTaskComplete<AuthManager.LoginResult>() {
                     @Override
                     public void onComplete(AuthManager.LoginResult result) {
-                        if (result == null) {
+                        if (result == null || !result.isSuccessful()) {
                             reEnter();
                         } else {
                             UserData u= AuthManager.getInstance().getCurrentUserData();

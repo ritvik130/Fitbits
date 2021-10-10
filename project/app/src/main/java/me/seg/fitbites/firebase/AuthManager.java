@@ -84,7 +84,7 @@ public class AuthManager {
 
                         onComplete.onComplete(new LoginResult(true, task.getResult().getUser().getUid()));
                     } else {
-                        Log.i(LOG_TAG, "User: " + email + " failed to create account");
+                        Log.i(LOG_TAG, "User: " + email + " failed to create account, reason: " + task.getException());
                         onComplete.onComplete(new LoginResult(false, null));
                     }
                 }
