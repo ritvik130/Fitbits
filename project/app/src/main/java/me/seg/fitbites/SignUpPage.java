@@ -9,6 +9,7 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -25,7 +26,7 @@ import java.util.regex.Matcher;
 public class SignUpPage extends AppCompatActivity implements View.OnClickListener {
     AlertDialog error;
     Button signUpInstructor, signUpMember;
-    TextView name, age, username, password, firstName, lastName, address, email;
+    EditText age, username, password, firstName, lastName, address, email;
     private final String emailValidationPattern = "[a-z0-9!#$%&\'*+/=?^_\'{|}~-]+(?:.[a-z0-9!#$%&\'*+/=?^_\'{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,7 +129,9 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
 
 
     private boolean checkInfoFilled() {
-        if (username.getText().length() < 1 || name.getText().length() < 1 || age.getText().length() < 1 || password.getText().length() < 1) {
+        if (username.getText().length() < 1 || age.getText().length() < 1 || password.getText().length() < 1 ||
+            firstName.getText().length() < 1 || lastName.getText().length() < 1 || email.getText().length() < 1
+        ) {
             AlertDialog.Builder nullParams = new AlertDialog.Builder(SignUpPage.this);
             nullParams.setCancelable(true);
             nullParams.setTitle("*Error*");
