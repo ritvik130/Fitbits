@@ -54,7 +54,7 @@ public class FitClassType {
         //note the probability of having uid collisions is extremely low (according to various sources)
         //and basically 0 to the point where checking if there is a duplicate is generally not required.
         //also if we were soo lucky to get a uid collision, it was probably fate that the other
-        //class type is overridden
+        //class type is overridden, also you should probably buy a lottery ticket.
         UUID uid = UUID.randomUUID();
 
         FitClassType ct = new FitClassType(uid.toString(), name, description);

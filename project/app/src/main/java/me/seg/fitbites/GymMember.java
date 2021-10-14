@@ -14,8 +14,4 @@ public class GymMember extends UserData {
 
     public GymMember() {}
 
-    public void viewEnrolledClasses(){
-        // gives a list of classes enrolled by the member
-    }
-
 }
