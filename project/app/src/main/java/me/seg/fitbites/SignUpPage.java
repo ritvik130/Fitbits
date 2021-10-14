@@ -100,9 +100,9 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
                             startActivity(intent);
 
 
-                        } else {//TODO temp send to same screen
+                        } else {
                             //is member
-                            Intent intent = new Intent(current, InstructorWelcome.class);
+                            Intent intent = new Intent(current, GymMemberWelcome.class);
                             startActivity(intent);
 
                         }

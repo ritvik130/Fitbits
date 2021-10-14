@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/Mem_Title"
         android:layout_width="244dp"
         android:layout_height="54dp"
         android:layout_marginStart="50dp"
@@ -51,7 +51,7 @@
         android:text="List of Classes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/Mem_Title" />
 
     <TextView
         android:id="@+id/textView4"

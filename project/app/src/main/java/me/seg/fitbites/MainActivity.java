@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
                                 alert.setMessage("Something went wrong! Info: Invalid usertype!");
                                 AlertDialog dialog = alert.create();
                                 dialog.show();
-                                return;
                             }
 
                         }
