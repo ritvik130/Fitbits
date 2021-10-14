@@ -1,5 +1,6 @@
 package me.seg.fitbites;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -30,10 +31,21 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.loginButton);
         signup = findViewById(R.id.button_signUp);
 
+
         final MainActivity current = this;
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if(user.getText().length() == 0 || pass.getText().length() == 0) {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                    alert.setTitle("Error");
+                    alert.setMessage("You must fill in all the text fields!");
+                    AlertDialog dialog = alert.create();
+                    dialog.show();
+                    return;
+                }
+
                 AuthManager.getInstance().validateUser(user.getText().toString(), pass.getText().toString(), new OnTaskComplete<AuthManager.LoginResult>() {
                     @Override
                     public void onComplete(AuthManager.LoginResult result) {
@@ -47,10 +59,20 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
 
                             }
-                            else if (u instanceof GymMember){//TODO temp remove later
-                                Intent intent = new Intent(current, InstructorWelcome.class);
+                            else if (u instanceof GymMember){
+                                Intent intent = new Intent(current, GymMemberWelcome.class);
                                 startActivity(intent);
 
+                            } else if(u instanceof Admin) {
+                                Intent intent = new Intent(current, AdminLogin.class);
+                                startActivity(intent);
+                            } else {
+                                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                                alert.setTitle("Error");
+                                alert.setMessage("Something went wrong! Info: Invalid usertype!");
+                                AlertDialog dialog = alert.create();
+                                dialog.show();
+                                return;
                             }
 
                         }
@@ -77,8 +99,12 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void reEnter() {
         user.setText("Invalid");
-        pass.setText("Invalid");
-
+        pass.setText("");
+        AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+        alert.setTitle("Error");
+        alert.setMessage("Email and password is invalid!");
+        AlertDialog dialog = alert.create();
+        dialog.show();
     }
 
 

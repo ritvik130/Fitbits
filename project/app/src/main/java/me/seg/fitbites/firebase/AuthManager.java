@@ -39,11 +39,17 @@ public class AuthManager {
 
     public void validateUser(String email, String password, OnTaskComplete<LoginResult> onComplete) {
         //sign in user
-        if(email.equalsIgnoreCase("admin") && password.equals("admin123")) {
-            currentLogIn = "admin";
-            currentLogInData = new Admin();
-            onComplete.onComplete(new LoginResult(true, "Admin"));
-            return;
+        if(email.equalsIgnoreCase("admin")) {
+            if(password.equals("admin123")) {
+                currentLogIn = "admin";
+                currentLogInData = new Admin();
+                onComplete.onComplete(new LoginResult(true, "Admin"));
+                return;
+            } else {
+                onComplete.onComplete(new LoginResult(false, null));
+                return;
+            }
+
         }
         //created using example from Official Documentation:
         //https://firebase.google.com/docs/auth/android/start#sign_up_new_users
