@@ -22,7 +22,7 @@ public class Search_Class_Edit extends AppCompatActivity {
         TextView className;
 
         searchBTN = findViewById(R.id.searchButton);
-        className = findViewById(R.id.editTextTextPersonName4);
+        className = findViewById(R.id.classtext);
 
         //final ChangeClassScreen current = this;
 
