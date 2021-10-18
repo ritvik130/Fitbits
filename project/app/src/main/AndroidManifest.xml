@@ -10,15 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitbites">
         <activity
+            android:name=".Search_Class_Edit"
+            android:exported="true" />
+        <activity
             android:name=".CancelClass"
             android:exported="true" />
         <activity
             android:name=".ChangeClassScreen"
-            android:exported="true" />
-        <activity
-            android:name=".ui.login.ClassScreen"
-            android:exported="true"
-            android:label="@string/title_activity_class_screen" />
+            android:exported="true" /> <!-- <activity -->
+        <!-- android:name=".ui.login.ClassScreen" -->
+        <!-- android:exported="true" -->
+        <!-- android:label="@string/title_activity_class_screen" /> -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SignUpPage" />
     </application>
 
 </manifest>
