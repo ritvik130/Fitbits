@@ -10,14 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitbites">
         <activity
+            android:name=".Search_Class_Edit"
+            android:exported="true" />
+		<activity
             android:name=".GymMemberWelcome"
             android:exported="true" />
         <activity
             android:name=".CancelClass"
             android:exported="true" />
-        <activity
-            android:name=".InstructorWelcome"
+		<activity
+			android:name=".InstructorWelcome"
             android:exported="true" />
+        <activity
         <activity
             android:name=".ChangeClassScreen"
             android:exported="true" /> <!-- <activity -->

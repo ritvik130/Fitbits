@@ -47,10 +47,19 @@
     <string name="Inst_DeleteBtn">Delete Class</string>
     <string name="Inst_noClass">You have no Scheduled Classes!</string>
 
+<<<<<<< HEAD
     <!-- Member Screen -->
     <string name="Mem_title">Welcome Gym Member\nx!</string>
     <string name="Mem_noClass">You have no Scheduled Classes!</string>
     <string name="Mem_ClassBtn">Classes</string>
+=======
+    //change class screen
+    <string name="back">Back</string>
+    <string name="class_name"> </string>
+    <string name="class_description"> </string>
+    <string name="change_class"> </string>
+    <string name="changeClass">Change Class!</string>
+>>>>>>> master
 
 
 </resources>
