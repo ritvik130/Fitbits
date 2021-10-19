@@ -52,7 +52,11 @@ public class Search_Class_Edit extends AppCompatActivity {
         LinearLayout layout = (LinearLayout)findViewById(R.id.layout1);
         LinearLayout.LayoutParams layoutP= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
+        layout.removeAllViews();
+        boolean addedAtLeastOne = false;
+
         for (FitClassType c: r){
+            addedAtLeastOne = true;
             Button button= new Button(this);
             button.setText(c.getClassName());
             button.setOnClickListener(new View.OnClickListener() {
@@ -64,8 +68,14 @@ public class Search_Class_Edit extends AppCompatActivity {
                 }
             });
             layout.addView(button, layoutP);
-
         }
+
+        if(!addedAtLeastOne) {
+            TextView v = new TextView(this);
+            v.setText("No Classes Found");
+            layout.addView(v, layoutP);
+        }
+
 
     }
 
