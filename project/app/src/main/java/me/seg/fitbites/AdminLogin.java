@@ -10,7 +10,7 @@ import android.widget.Button;
 public class AdminLogin extends AppCompatActivity {
     private Button manageClasses;
     private Button deleteAccounts;
-    private Button newClass;
+    private Button newClass, searchUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,4 +60,5 @@ public class AdminLogin extends AppCompatActivity {
         Intent intent= new Intent(this,AddNewClass.class );
         startActivity(intent);
     }
+
 }

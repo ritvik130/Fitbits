@@ -13,9 +13,9 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="59dp"
         android:ems="10"
+        android:hint="Enter Member Email"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Enter Member Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,42 +31,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Member_SearchBar" />
 
-    <CheckBox
-        android:id="@+id/instructor_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="33dp"
-        android:minHeight="48dp"
-        android:text="Instructor"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filter_text_usersearch" />
-
-    <CheckBox
-        android:id="@+id/member_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="16dp"
-        android:minHeight="48dp"
-        android:text="Member"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/instructor_checkbox" />
-
     <ScrollView
         android:id="@+id/user_results"
         android:layout_width="163dp"
         android:layout_height="300dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="76dp"
         android:background="#F1EBEB"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/member_checkbox"
-        tools:ignore="SpeakableTextPresentCheck">
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteY="394dp">
 
         <LinearLayout
+            android:id="@+id/susll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />

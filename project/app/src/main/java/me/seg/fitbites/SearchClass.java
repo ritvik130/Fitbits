@@ -40,6 +40,7 @@ public class SearchClass extends AppCompatActivity {
                 FitClassType.searchClass(classtext.getText().toString(), new OnTaskComplete<FitClassType[]>() {
                     @Override
                     public void onComplete(FitClassType[] result) {
+
                         placeIntoResults(result);
                     }
                 });
@@ -80,6 +81,7 @@ public class SearchClass extends AppCompatActivity {
                     builder.setMessage("Are you sure you want to remove this class?")
                             .setPositiveButton("Yes",dialogListener)
                                 .setNegativeButton("No", dialogListener);
+                    // builder.show(); needs to be added
 
 
                 }

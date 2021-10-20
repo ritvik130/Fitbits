@@ -32,7 +32,7 @@ public class AddNewClass extends AppCompatActivity {
         });
     }
     private void newFitClass(String className, String classDescription ){
-        createFitClassType(className, classDescription);
+        FitClassType.createFitClassType(className, classDescription);
     }
 
 }
