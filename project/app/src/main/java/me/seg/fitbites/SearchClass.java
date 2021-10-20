@@ -30,6 +30,12 @@ public class SearchClass extends AppCompatActivity {
         classtext = findViewById(R.id.classtext);
 
         //final ChangeClassScreen current = this;
+        FirestoreDatabase.getInstance().viewAllClassTypes(new OnTaskComplete<FitClassType[]>() {
+            @Override
+            public void onComplete(FitClassType[] result) {
+                placeIntoResults(result);
+            }
+        });
 
 
         searchButton.setOnClickListener(new View.OnClickListener()
@@ -84,8 +90,7 @@ public class SearchClass extends AppCompatActivity {
                     builder.setMessage("Are you sure you want to remove this class?")
                             .setPositiveButton("Yes",dialogListener)
                                 .setNegativeButton("No", dialogListener);
-
-
+                    builder.show();
                 }
             });
             layout.addView(button, layoutP);

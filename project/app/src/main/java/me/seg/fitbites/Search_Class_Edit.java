@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
 public class Search_Class_Edit extends AppCompatActivity {
@@ -25,6 +26,13 @@ public class Search_Class_Edit extends AppCompatActivity {
         className = findViewById(R.id.classtext);
 
         //final ChangeClassScreen current = this;
+
+        FirestoreDatabase.getInstance().viewAllClassTypes(new OnTaskComplete<FitClassType[]>() {
+            @Override
+            public void onComplete(FitClassType[] result) {
+                placeIntoResults(result);
+            }
+        });
 
 
         searchBTN.setOnClickListener(new View.OnClickListener()

@@ -2,6 +2,7 @@ package me.seg.fitbites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,12 +28,14 @@ public class AddNewClass extends AppCompatActivity {
             public void onClick(View v) {
                 className = classNameInput.getText().toString();
                 classDescription = classDescriptionInput.getText().toString();
-                 newFitClass(className, classDescription);
+                newFitClass(className, classDescription);
+                Intent i = new Intent(AddNewClass.this, ManageClassScreen.class);
+                startActivity(i);
             }
         });
     }
     private void newFitClass(String className, String classDescription ){
-        createFitClassType(className, classDescription);
+        FitClassType.createFitClassType(className, classDescription);
     }
 
 }

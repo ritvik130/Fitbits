@@ -19,7 +19,7 @@ public class ChangeClassScreen extends AppCompatActivity {
         TextView className,classDescription;
         setContentView(R.layout.activity_change_class_screen);
 
-        backBTN = findViewById(R.id.button);
+        backBTN = findViewById(R.id.bkbutton);
         className = findViewById(R.id.editTextTextPersonName9);
         classDescription = findViewById(R.id.editTextTextPersonName10);
         changeClassBTN = findViewById(R.id.button2);
