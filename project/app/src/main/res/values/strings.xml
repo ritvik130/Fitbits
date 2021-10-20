@@ -31,6 +31,7 @@
     <string name="DeleteAccounts">Delete Account</string>
     <string name="NewClasses">Add New Classes</string>
     <string name="ReportUsers">Report Users</string>
+    <string name="Admin_Signout">Sign out</string>
 
     <string name="AddNewClass">Add New Class</string>
     <string name="NewClassName">New class name: *required*</string>
@@ -46,20 +47,20 @@
     <string name="Inst_editBtn">Edit Class</string>
     <string name="Inst_DeleteBtn">Delete Class</string>
     <string name="Inst_noClass">You have no Scheduled Classes!</string>
+    <string name="Inst_signout">Sign Out</string>
 
-<<<<<<< HEAD
     <!-- Member Screen -->
     <string name="Mem_title">Welcome Gym Member\nx!</string>
     <string name="Mem_noClass">You have no Scheduled Classes!</string>
     <string name="Mem_ClassBtn">Classes</string>
-=======
+    <string name="welGm_signout">Sign Out</string>
+
     //change class screen
     <string name="back">Back</string>
     <string name="class_name"> </string>
     <string name="class_description"> </string>
     <string name="change_class"> </string>
     <string name="changeClass">Change Class!</string>
->>>>>>> master
 
 
 </resources>

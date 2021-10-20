@@ -15,21 +15,24 @@ import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
 public class SearchClass extends AppCompatActivity {
-
-
+    private Button searchButton;
+    private TextView classtext;
+    private FirestoreDatabase db;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_class_screen);
 
-
-        Button searchButton;
-        TextView classtext;
-
         searchButton = findViewById(R.id.searchButton);
         classtext = findViewById(R.id.classtext);
 
         //final ChangeClassScreen current = this;
+        db.getInstance().viewAllClassTypes(new OnTaskComplete<FitClassType[]>() {
+            @Override
+            public void onComplete(FitClassType[] result) {
+                placeIntoResults(result);
+            }
+        });
 
 
         searchButton.setOnClickListener(new View.OnClickListener()
@@ -51,11 +54,15 @@ public class SearchClass extends AppCompatActivity {
 
     }
 
-    public void placeIntoResults(FitClassType[] r){
+    private void placeIntoResults(FitClassType[] r){
         LinearLayout layout = (LinearLayout)findViewById(R.id.searchresultslayout);
         LinearLayout.LayoutParams layoutP= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
+        layout.removeAllViews();
+        boolean addedAtLeastOne = false;
+
         for (FitClassType c: r){
+            addedAtLeastOne = true;
             Button button= new Button(this);
             button.setText(c.getClassName());
             button.setOnClickListener(new View.OnClickListener() {
@@ -80,12 +87,17 @@ public class SearchClass extends AppCompatActivity {
                     builder.setMessage("Are you sure you want to remove this class?")
                             .setPositiveButton("Yes",dialogListener)
                                 .setNegativeButton("No", dialogListener);
-
-
+                    builder.show();
                 }
             });
             layout.addView(button, layoutP);
 
+        }
+
+        if(!addedAtLeastOne) {
+            TextView v = new TextView(this);
+            v.setText("No Classes Found");
+            layout.addView(v, layoutP);
         }
 
     }

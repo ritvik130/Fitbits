@@ -33,6 +33,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.25" />
 
+        <Button
+            android:id="@+id/welGm_signout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/welGm_signout" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25" />
+
     </TableRow>
 
     <TextView
