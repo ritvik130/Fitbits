@@ -17,9 +17,11 @@ import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
 public class MainActivity extends AppCompatActivity {
-    Button login, signup;
-    TextView user, pass;
-
+    private Button login, signup;
+    private TextView user, pass;
+    private MainActivity current;
+    private AlertDialog.Builder alert;
+    private AlertDialog dialog;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +34,16 @@ public class MainActivity extends AppCompatActivity {
         signup = findViewById(R.id.button_signUp);
 
 
-        final MainActivity current = this;
+        current = this;
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if(user.getText().length() == 0 || pass.getText().length() == 0) {
-                    AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                    alert = new AlertDialog.Builder(MainActivity.this);
                     alert.setTitle("Error");
                     alert.setMessage("You must fill in all the text fields!");
-                    AlertDialog dialog = alert.create();
+                    dialog = alert.create();
                     dialog.show();
                     return;
                 }
@@ -99,10 +101,10 @@ public class MainActivity extends AppCompatActivity {
     public void reEnter() {
         user.setText("Invalid");
         pass.setText("");
-        AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+        alert = new AlertDialog.Builder(MainActivity.this);
         alert.setTitle("Error");
         alert.setMessage("Email and password is invalid!");
-        AlertDialog dialog = alert.create();
+        dialog = alert.create();
         dialog.show();
     }
 

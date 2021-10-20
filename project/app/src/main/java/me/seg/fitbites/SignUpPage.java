@@ -24,9 +24,9 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class SignUpPage extends AppCompatActivity implements View.OnClickListener {
-    AlertDialog error;
-    Button signUpInstructor, signUpMember;
-    EditText age, username, password, firstName, lastName, address, email;
+    private AlertDialog error;
+    private Button signUpInstructor, signUpMember;
+    private EditText age, username, password, firstName, lastName, address, email;
     private final String emailValidationPattern = "[a-z0-9!#$%&\'*+/=?^_\'{|}~-]+(?:.[a-z0-9!#$%&\'*+/=?^_\'{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
 
     protected void onCreate(Bundle savedInstanceState) {

@@ -11,17 +11,17 @@ import android.widget.TextView;
 import me.seg.fitbites.firebase.AuthManager;
 
 public class GymMemberWelcome extends AppCompatActivity {
-
-
+    private TextView title;
+    private Button signout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gym_member_welcome);
 
-        TextView title = findViewById(R.id.Mem_Title);
+        title = findViewById(R.id.Mem_Title);
         title.setText(title.getText().toString().replace("x", AuthManager.getInstance().getCurrentUserData().getFirstName()));
 
-        Button signout = (Button) findViewById(R.id.welGm_signout);
+        signout = (Button) findViewById(R.id.welGm_signout);
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

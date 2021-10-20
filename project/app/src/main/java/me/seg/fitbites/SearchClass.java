@@ -15,22 +15,19 @@ import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
 public class SearchClass extends AppCompatActivity {
-
-
+    private Button searchButton;
+    private TextView classtext;
+    private FirestoreDatabase db;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_class_screen);
 
-
-        Button searchButton;
-        TextView classtext;
-
         searchButton = findViewById(R.id.searchButton);
         classtext = findViewById(R.id.classtext);
 
         //final ChangeClassScreen current = this;
-        FirestoreDatabase.getInstance().viewAllClassTypes(new OnTaskComplete<FitClassType[]>() {
+        db.getInstance().viewAllClassTypes(new OnTaskComplete<FitClassType[]>() {
             @Override
             public void onComplete(FitClassType[] result) {
                 placeIntoResults(result);
@@ -57,7 +54,7 @@ public class SearchClass extends AppCompatActivity {
 
     }
 
-    public void placeIntoResults(FitClassType[] r){
+    private void placeIntoResults(FitClassType[] r){
         LinearLayout layout = (LinearLayout)findViewById(R.id.searchresultslayout);
         LinearLayout.LayoutParams layoutP= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 

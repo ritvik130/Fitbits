@@ -13,21 +13,20 @@ import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
 public class Search_Class_Edit extends AppCompatActivity {
-
+    private Button searchBTN;
+    private TextView className;
+    private FirestoreDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_class_edit);
-
-        Button searchBTN;
-        TextView className;
 
         searchBTN = findViewById(R.id.searchButton);
         className = findViewById(R.id.classtext);
 
         //final ChangeClassScreen current = this;
 
-        FirestoreDatabase.getInstance().viewAllClassTypes(new OnTaskComplete<FitClassType[]>() {
+        db.getInstance().viewAllClassTypes(new OnTaskComplete<FitClassType[]>() {
             @Override
             public void onComplete(FitClassType[] result) {
                 placeIntoResults(result);
