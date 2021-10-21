@@ -40,7 +40,7 @@ public class FitClass {
         return fc;
     }
 
-    public void deleteClass(FitClass cla){
+    public void deleteClass(){
         // deletes a class
         // access to instructor
     }
@@ -104,15 +104,4 @@ public class FitClass {
         // access to instructor
         System.out.println(cla+"class has been cancelled. ");
     }
-
-    //TODO move to student
-    public void enrolClass(FitClass cla){
-        // enrols in class
-        System.out.println(cla+"has been enrolled");
-    }
-    public void dropClass(FitClass cla){
-        // drops class
-        System.out.println(cla+"has been dropped");
-    }
-
 }

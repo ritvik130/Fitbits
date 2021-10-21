@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import me.seg.fitbites.firebase.AuthManager;
+
 public class AdminLogin extends AppCompatActivity {
     private Button manageClasses;
     private Button deleteAccounts;
+    private Button signOut;
     private Button newClass, searchUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,7 @@ public class AdminLogin extends AppCompatActivity {
         manageClasses = (Button) findViewById(R.id.ManageClasses);
         deleteAccounts = (Button) findViewById(R.id.DeleteAccounts);
         newClass=(Button) findViewById(R.id.NewClass);
+        signOut = (Button) findViewById(R.id.admin_Signout);
 
         manageClasses.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +41,14 @@ public class AdminLogin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openNewClass();
+            }
+        });
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AuthManager.getInstance().signoutUser();
+                Intent i = new Intent(AdminLogin.this, MainActivity.class);
+                startActivity(i);
             }
         });
 

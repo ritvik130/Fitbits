@@ -13,14 +13,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import me.seg.fitbites.firebase.AuthManager;
 import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
 public class SearchUser extends AppCompatActivity {
 
     private String memberSearch;
-    private Button searchButton;
+    private Button searchButton, bkBtn;
     private EditText memberSearchBar;
 
     @Override
@@ -30,6 +32,14 @@ public class SearchUser extends AppCompatActivity {
 
         memberSearchBar= (EditText) findViewById(R.id.Member_SearchBar);
         searchButton= (Button) findViewById(R.id.SearchButton);
+        bkBtn = (Button) findViewById(R.id.back_button_searchscreen);
+
+        FirestoreDatabase.getInstance().getUserList(new OnTaskComplete<UserData[]>() {
+            @Override
+            public void onComplete(UserData[] result) {
+                placeIntoResults(result);
+            }
+        });
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,12 +53,25 @@ public class SearchUser extends AppCompatActivity {
                 });
             }
         });
+
+        bkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SearchUser.this, AdminLogin.class);
+                startActivity(i);
+            }
+        });
     }
     public void placeIntoResults(UserData[] r){
-        LinearLayout layout = (LinearLayout)findViewById(R.id.searchresultslayout);
+        LinearLayout layout = (LinearLayout)findViewById(R.id.susll);
         LinearLayout.LayoutParams layoutP= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
+        layout.removeAllViews();
+        boolean addedAtLeastOne = false;
+
         for (UserData c: r){
+            addedAtLeastOne = true;
+
             Button button= new Button(this);
             button.setText(c.getEmail());
             button.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +84,7 @@ public class SearchUser extends AppCompatActivity {
 
 
                             if (DialogInterface.BUTTON_POSITIVE == which) {
-                                FirestoreDatabase.getInstance().deleteUserData(c);
+                                AuthManager.getInstance().deleteAccount(c);
                                 Intent intent = new Intent(SearchUser.this, AdminLogin.class);
                                 startActivity(intent);
                             }
@@ -80,6 +103,12 @@ public class SearchUser extends AppCompatActivity {
             });
             layout.addView(button, layoutP);
 
+        }
+
+        if(!addedAtLeastOne) {
+            TextView v = new TextView(this);
+            v.setText("No Users Found");
+            layout.addView(v, layoutP);
         }
 
     }

@@ -12,8 +12,14 @@
         <activity
             android:name=".Search_Class_Edit"
             android:exported="true" />
+		<activity
+            android:name=".GymMemberWelcome"
+            android:exported="true" />
         <activity
             android:name=".CancelClass"
+            android:exported="true" />
+		<activity
+			android:name=".InstructorWelcome"
             android:exported="true" />
         <activity
             android:name=".ChangeClassScreen"
@@ -28,7 +34,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpPage" />
+        <activity
+            android:name=".SignUpPage"
+            android:exported="true" />
+        <activity
+            android:name=".SearchUser"
+            android:exported="true" />
+        <activity
+            android:name=".AdminLogin"
+            android:exported="true" />
+        <activity
+            android:name=".AddNewClass"
+            android:exported="true" />
+        <activity
+            android:name=".ManageClassScreen"
+            android:exported="true" />
+        <activity
+            android:name=".SearchClass"
+            android:exported="true" />
     </application>
 
 </manifest>

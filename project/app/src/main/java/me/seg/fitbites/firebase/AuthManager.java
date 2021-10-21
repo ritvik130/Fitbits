@@ -39,11 +39,17 @@ public class AuthManager {
 
     public void validateUser(String email, String password, OnTaskComplete<LoginResult> onComplete) {
         //sign in user
-        if(email.equalsIgnoreCase("admin") && password.equals("admin123")) {
-            currentLogIn = "admin";
-            currentLogInData = new Admin();
-            onComplete.onComplete(new LoginResult(true, "Admin"));
-            return;
+        if(email.equalsIgnoreCase("admin")) {
+            if(password.equals("admin123")) {
+                currentLogIn = "admin";
+                currentLogInData = new Admin();
+                onComplete.onComplete(new LoginResult(true, "Admin"));
+                return;
+            } else {
+                onComplete.onComplete(new LoginResult(false, null));
+                return;
+            }
+
         }
         //created using example from Official Documentation:
         //https://firebase.google.com/docs/auth/android/start#sign_up_new_users
@@ -84,7 +90,7 @@ public class AuthManager {
 
                         onComplete.onComplete(new LoginResult(true, task.getResult().getUser().getUid()));
                     } else {
-                        Log.i(LOG_TAG, "User: " + email + " failed to create account");
+                        Log.i(LOG_TAG, "User: " + email + " failed to create account, reason: " + task.getException());
                         onComplete.onComplete(new LoginResult(false, null));
                     }
                 }

@@ -10,7 +10,7 @@ import me.seg.fitbites.firebase.AuthManager;
 import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
-public class UserData {
+public abstract class UserData {
 
     public static final String USERTYPE_DATABASE_LABEL = "label";
 

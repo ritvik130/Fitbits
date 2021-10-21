@@ -5,42 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InstructorWelcome"
-    android:background="@drawable/background_gradient">>
+    android:background="@drawable/background_gradient">
 
     <TableRow
-        android:id="@+id/signoutrow"
+        android:id="@+id/tableRow2"
         android:layout_width="419dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.25" />
-
-        <Button
-            android:id="@+id/inst_signout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/Inst_signout" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.25" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/row2"
-        android:layout_width="419dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/signoutrow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -54,7 +26,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/Inst_addBtn" />
+            android:text="@string/Mem_ClassBtn" />
 
         <Space
             android:layout_width="0dp"
@@ -62,23 +34,11 @@
             android:layout_weight="0.25" />
 
         <Button
-            android:id="@+id/EditClassBtn"
+            android:id="@+id/welGm_signout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/Inst_editBtn" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.25" />
-
-        <Button
-            android:id="@+id/DeleteClassBtn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/Inst_DeleteBtn" />
+            android:text="@string/welGm_signout" />
 
         <Space
             android:layout_width="0dp"
@@ -88,11 +48,11 @@
     </TableRow>
 
     <TextView
-        android:id="@+id/Inst_Title"
+        android:id="@+id/Mem_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="@string/Inst_title"
+        android:text="@string/Mem_title"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -107,25 +67,25 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@id/row2"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Inst_Title">
+        app:layout_constraintTop_toBottomOf="@+id/Mem_Title">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent" >
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Inst_noClass"
+                    android:text="@string/Mem_noClass"
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </androidx.cardview.widget.CardView>

@@ -67,12 +67,12 @@ public class ManageClassScreen extends AppCompatActivity {
     }
     public void editClass(){
         // goes to Change class screen
-        Intent intent= new Intent(this,ChangeClassScreen.class );
+        Intent intent= new Intent(this,Search_Class_Edit.class );
         startActivity(intent);
     }
     public void removeClass(){
         // goes to cancel class screen
-        Intent intent= new Intent(this, CancelClass.class);
+        Intent intent= new Intent(this, SearchClass.class);
         startActivity(intent);
     }
     public void createTag(){

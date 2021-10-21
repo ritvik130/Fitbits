@@ -76,6 +76,18 @@
 
 
     <Button
+        android:id="@+id/admin_Signout"
+        android:layout_width="111dp"
+        android:layout_height="86dp"
+        android:text="@string/Admin_Signout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.889" />
+
+    <Button
         android:id="@+id/NewClass"
         android:layout_width="107dp"
         android:layout_height="83dp"

@@ -5,7 +5,7 @@
     <string name="loginTxt">Login</string>
     <string name="username">Username:</string>
     <string name="password">Password:</string>
-    <string name="signup">Sign up</string>
+    <string name="signup">Sign up for Instructor!</string>
     <string name="signup2">Sign up for Member!</string>
     <string name="signup3">Sign up!</string>
     <string name="title_activity_class_screen">ClassScreen</string>
@@ -31,6 +31,7 @@
     <string name="DeleteAccounts">Delete Account</string>
     <string name="NewClasses">Add New Classes</string>
     <string name="ReportUsers">Report Users</string>
+    <string name="Admin_Signout">Sign out</string>
 
     <string name="AddNewClass">Add New Class</string>
     <string name="NewClassName">New class name: *required*</string>
@@ -46,6 +47,13 @@
     <string name="Inst_editBtn">Edit Class</string>
     <string name="Inst_DeleteBtn">Delete Class</string>
     <string name="Inst_noClass">You have no Scheduled Classes!</string>
+    <string name="Inst_signout">Sign Out</string>
+
+    <!-- Member Screen -->
+    <string name="Mem_title">Welcome Gym Member\nx!</string>
+    <string name="Mem_noClass">You have no Scheduled Classes!</string>
+    <string name="Mem_ClassBtn">Classes</string>
+    <string name="welGm_signout">Sign Out</string>
 
     //change class screen
     <string name="back">Back</string>
