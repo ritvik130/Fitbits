@@ -1,4 +1,4 @@
-package me.seg.fitbites;
+package me.seg.fitbites.layouts.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ManageClassScreen extends AppCompatActivity {
+import me.seg.fitbites.R;
+
+public class AdminClassOptionsActivity extends AppCompatActivity {
     private Button back;
     private Button addClass;
     private Button removeClass;
@@ -17,7 +19,7 @@ public class ManageClassScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manage_class_screen);
+        setContentView(R.layout.activity_admin_classOptions);
         back = (Button) findViewById(R.id.OptScreenBackBtn);
         addClass= (Button) findViewById(R.id.AddClassBtn);
         removeClass= (Button) findViewById(R.id.RemoveClassBtn);
@@ -57,22 +59,22 @@ public class ManageClassScreen extends AppCompatActivity {
     }
     public void back(){
         // goes back to admin login class
-        Intent intent= new Intent(this,AdminLogin.class );
+        Intent intent= new Intent(this, AdminWelcomeActivity.class );
         startActivity(intent);
     }
     public void addNewClass(){
         // goes to add new class screen
-        Intent intent= new Intent(this,AddNewClass.class );
+        Intent intent= new Intent(this, AdminAddClassActivity.class );
         startActivity(intent);
     }
     public void editClass(){
         // goes to Change class screen
-        Intent intent= new Intent(this,Search_Class_Edit.class );
+        Intent intent= new Intent(this, AdminEditClass_SearchActivity.class );
         startActivity(intent);
     }
     public void removeClass(){
         // goes to cancel class screen
-        Intent intent= new Intent(this, SearchClass.class);
+        Intent intent= new Intent(this, AdminDeleteClassActivity.class);
         startActivity(intent);
     }
     public void createTag(){

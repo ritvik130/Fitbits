@@ -1,79 +1,82 @@
-package me.seg.fitbites;
+package me.seg.fitbites.layouts.admin;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import me.seg.fitbites.firebase.AuthManager;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import me.seg.fitbites.R;
+import me.seg.fitbites.data.FitClassType;
 import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
-public class SearchUser extends AppCompatActivity {
-
-    private String memberSearch;
+public class AdminDeleteClassActivity extends AppCompatActivity {
     private Button searchButton, bkBtn;
-    private EditText memberSearchBar;
+    private TextView classtext;
+    private FirestoreDatabase db;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.search_user_screen);
+        setContentView(R.layout.activity_admin_deleteClass);
 
-        memberSearchBar= (EditText) findViewById(R.id.Member_SearchBar);
-        searchButton= (Button) findViewById(R.id.SearchButton);
-        bkBtn = (Button) findViewById(R.id.back_button_searchscreen);
+        searchButton = findViewById(R.id.searchButton);
+        classtext = findViewById(R.id.classtext);
+        bkBtn = findViewById(R.id.search_class_back_btn);
 
-        FirestoreDatabase.getInstance().getUserList(new OnTaskComplete<UserData[]>() {
+        //final ChangeClassScreen current = this;
+        db.getInstance().viewAllClassTypes(new OnTaskComplete<FitClassType[]>() {
             @Override
-            public void onComplete(UserData[] result) {
+            public void onComplete(FitClassType[] result) {
                 placeIntoResults(result);
             }
         });
 
-        searchButton.setOnClickListener(new View.OnClickListener() {
+
+        searchButton.setOnClickListener(new View.OnClickListener()
+
+        {
             @Override
-            public void onClick(View v) {
-                memberSearch = memberSearchBar.getText().toString();
-                UserData.searchUser(memberSearch, new OnTaskComplete<UserData[]>() {
+            public void onClick (View v){
+                FitClassType.searchClass(classtext.getText().toString(), new OnTaskComplete<FitClassType[]>() {
                     @Override
-                    public void onComplete(UserData[] result) {
+                    public void onComplete(FitClassType[] result) {
+
                         placeIntoResults(result);
                     }
                 });
+
             }
+
         });
 
         bkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(SearchUser.this, AdminLogin.class);
+                Intent i = new Intent(AdminDeleteClassActivity.this, AdminClassOptionsActivity.class);
                 startActivity(i);
             }
         });
+
+
     }
-    public void placeIntoResults(UserData[] r){
-        LinearLayout layout = (LinearLayout)findViewById(R.id.susll);
+
+    private void placeIntoResults(FitClassType[] r){
+        LinearLayout layout = (LinearLayout)findViewById(R.id.searchresultslayout);
         LinearLayout.LayoutParams layoutP= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
         layout.removeAllViews();
         boolean addedAtLeastOne = false;
 
-        for (UserData c: r){
+        for (FitClassType c: r){
             addedAtLeastOne = true;
-
             Button button= new Button(this);
-            button.setText(c.getEmail());
+            button.setText(c.getClassName());
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -84,21 +87,19 @@ public class SearchUser extends AppCompatActivity {
 
 
                             if (DialogInterface.BUTTON_POSITIVE == which) {
-                                AuthManager.getInstance().deleteAccount(c);
-                                Intent intent = new Intent(SearchUser.this, AdminLogin.class);
+                                FirestoreDatabase.getInstance().deleteFitClassType(c);
+                                Intent intent = new Intent(AdminDeleteClassActivity.this, AdminWelcomeActivity.class);
                                 startActivity(intent);
                             }
 
                         }
                     };
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(SearchUser.this);
-                    builder.setMessage("Are you sure you want to remove this User?")
+                    AlertDialog.Builder builder = new AlertDialog.Builder(AdminDeleteClassActivity.this);
+                    builder.setMessage("Are you sure you want to remove this class?")
                             .setPositiveButton("Yes",dialogListener)
-                            .setNegativeButton("No", dialogListener);
+                                .setNegativeButton("No", dialogListener);
                     builder.show();
-
-
                 }
             });
             layout.addView(button, layoutP);
@@ -107,9 +108,10 @@ public class SearchUser extends AppCompatActivity {
 
         if(!addedAtLeastOne) {
             TextView v = new TextView(this);
-            v.setText("No Users Found");
+            v.setText("No Classes Found");
             layout.addView(v, layoutP);
         }
 
     }
+
 }

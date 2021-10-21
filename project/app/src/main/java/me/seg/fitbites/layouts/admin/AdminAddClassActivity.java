@@ -1,4 +1,4 @@
-package me.seg.fitbites;
+package me.seg.fitbites.layouts.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-public class AddNewClass extends AppCompatActivity {
+import me.seg.fitbites.R;
+import me.seg.fitbites.data.FitClassType;
+
+public class AdminAddClassActivity extends AppCompatActivity {
     private String className, classDescription;
     private TextView classNameInput, classDescriptionInput;
     private Button submitButton, bkBtn;
@@ -18,7 +20,7 @@ public class AddNewClass extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_new_class);
+        setContentView(R.layout.activity_admin_addClass);
         classNameInput=(TextView) findViewById(R.id.textView7);
         classDescriptionInput=(TextView) findViewById(R.id.textView8);
         submitButton = (Button) findViewById(R.id.button1);
@@ -30,7 +32,7 @@ public class AddNewClass extends AppCompatActivity {
                 className = classNameInput.getText().toString();
                 classDescription = classDescriptionInput.getText().toString();
                 newFitClass(className, classDescription);
-                Intent i = new Intent(AddNewClass.this, ManageClassScreen.class);
+                Intent i = new Intent(AdminAddClassActivity.this, AdminClassOptionsActivity.class);
                 startActivity(i);
             }
         });
@@ -38,7 +40,7 @@ public class AddNewClass extends AppCompatActivity {
         bkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AddNewClass.this, AdminLogin.class);
+                Intent i = new Intent(AdminAddClassActivity.this, AdminWelcomeActivity.class);
                 startActivity(i);
             }
         });

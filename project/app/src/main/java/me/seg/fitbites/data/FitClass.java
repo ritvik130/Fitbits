@@ -1,11 +1,8 @@
-package me.seg.fitbites;
+package me.seg.fitbites.data;
 
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
 import java.util.UUID;
 
 import me.seg.fitbites.firebase.FirestoreDatabase;

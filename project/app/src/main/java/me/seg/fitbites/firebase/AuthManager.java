@@ -7,10 +7,9 @@ import androidx.annotation.NonNull;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.*;
-import com.google.firebase.firestore.auth.User;
 
-import me.seg.fitbites.Admin;
-import me.seg.fitbites.UserData;
+import me.seg.fitbites.data.Admin;
+import me.seg.fitbites.data.UserData;
 
 public class AuthManager {
 

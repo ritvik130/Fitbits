@@ -1,10 +1,6 @@
-package me.seg.fitbites;
-
-import com.google.firebase.firestore.auth.User;
+package me.seg.fitbites.data;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import me.seg.fitbites.firebase.AuthManager;
 import me.seg.fitbites.firebase.FirestoreDatabase;

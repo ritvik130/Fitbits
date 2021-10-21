@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitbites">
         <activity
-            android:name=".Search_Class_Edit"
+            android:name=".layouts.admin.AdminEditClass_SearchActivity"
             android:exported="true" />
 		<activity
-            android:name=".GymMemberWelcome"
+            android:name=".layouts.member.MemberWelcomeActivity"
             android:exported="true" />
         <activity
-            android:name=".CancelClass"
+            android:name=".layouts.instructor.InstructorCancelClassActivity"
             android:exported="true" />
 		<activity
-			android:name=".InstructorWelcome"
+			android:name=".layouts.instructor.InstructorWelcomeActivity"
             android:exported="true" />
         <activity
-            android:name=".ChangeClassScreen"
+            android:name=".layouts.admin.AdminEditClassActivity"
             android:exported="true" /> <!-- <activity -->
         <!-- android:name=".ui.login.ClassScreen" -->
         <!-- android:exported="true" -->
@@ -35,22 +35,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUpPage"
+            android:name=".MainCreateAccountActivity"
             android:exported="true" />
         <activity
-            android:name=".SearchUser"
+            android:name=".layouts.admin.AdminDeleteUserActivity"
             android:exported="true" />
         <activity
-            android:name=".AdminLogin"
+            android:name=".layouts.admin.AdminWelcomeActivity"
             android:exported="true" />
         <activity
-            android:name=".AddNewClass"
+            android:name=".layouts.admin.AdminAddClassActivity"
             android:exported="true" />
         <activity
-            android:name=".ManageClassScreen"
+            android:name=".layouts.admin.AdminClassOptionsActivity"
             android:exported="true" />
         <activity
-            android:name=".SearchClass"
+            android:name=".layouts.admin.AdminDeleteClassActivity"
             android:exported="true" />
     </application>
 
