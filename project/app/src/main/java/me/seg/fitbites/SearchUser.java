@@ -22,7 +22,7 @@ import me.seg.fitbites.firebase.OnTaskComplete;
 public class SearchUser extends AppCompatActivity {
 
     private String memberSearch;
-    private Button searchButton;
+    private Button searchButton, bkBtn;
     private EditText memberSearchBar;
 
     @Override
@@ -32,6 +32,7 @@ public class SearchUser extends AppCompatActivity {
 
         memberSearchBar= (EditText) findViewById(R.id.Member_SearchBar);
         searchButton= (Button) findViewById(R.id.SearchButton);
+        bkBtn = (Button) findViewById(R.id.back_button_searchscreen);
 
         FirestoreDatabase.getInstance().getUserList(new OnTaskComplete<UserData[]>() {
             @Override
@@ -50,6 +51,14 @@ public class SearchUser extends AppCompatActivity {
                         placeIntoResults(result);
                     }
                 });
+            }
+        });
+
+        bkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SearchUser.this, AdminLogin.class);
+                startActivity(i);
             }
         });
     }

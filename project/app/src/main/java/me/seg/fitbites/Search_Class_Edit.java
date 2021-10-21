@@ -13,7 +13,7 @@ import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
 public class Search_Class_Edit extends AppCompatActivity {
-    private Button searchBTN;
+    private Button searchBTN, bkBtn;
     private TextView className;
     private FirestoreDatabase db;
     @Override
@@ -23,6 +23,7 @@ public class Search_Class_Edit extends AppCompatActivity {
 
         searchBTN = findViewById(R.id.searchButton);
         className = findViewById(R.id.classtext);
+        bkBtn = findViewById(R.id.search_class_back_btn);
 
         //final ChangeClassScreen current = this;
 
@@ -82,6 +83,14 @@ public class Search_Class_Edit extends AppCompatActivity {
             v.setText("No Classes Found");
             layout.addView(v, layoutP);
         }
+
+        bkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Search_Class_Edit.this, ManageClassScreen.class);
+                startActivity(i);
+            }
+        });
 
 
     }

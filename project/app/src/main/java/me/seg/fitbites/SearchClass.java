@@ -15,7 +15,7 @@ import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
 public class SearchClass extends AppCompatActivity {
-    private Button searchButton;
+    private Button searchButton, bkBtn;
     private TextView classtext;
     private FirestoreDatabase db;
 
@@ -25,6 +25,7 @@ public class SearchClass extends AppCompatActivity {
 
         searchButton = findViewById(R.id.searchButton);
         classtext = findViewById(R.id.classtext);
+        bkBtn = findViewById(R.id.search_class_back_btn);
 
         //final ChangeClassScreen current = this;
         db.getInstance().viewAllClassTypes(new OnTaskComplete<FitClassType[]>() {
@@ -50,6 +51,14 @@ public class SearchClass extends AppCompatActivity {
 
             }
 
+        });
+
+        bkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SearchClass.this, ManageClassScreen.class);
+                startActivity(i);
+            }
         });
 
 

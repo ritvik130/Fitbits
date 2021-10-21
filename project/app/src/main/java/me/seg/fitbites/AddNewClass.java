@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class AddNewClass extends AppCompatActivity {
     private String className, classDescription;
     private TextView classNameInput, classDescriptionInput;
-    private Button submitButton;
+    private Button submitButton, bkBtn;
 
 
     @Override
@@ -22,6 +22,7 @@ public class AddNewClass extends AppCompatActivity {
         classNameInput=(TextView) findViewById(R.id.textView7);
         classDescriptionInput=(TextView) findViewById(R.id.textView8);
         submitButton = (Button) findViewById(R.id.button1);
+        bkBtn = (Button) findViewById(R.id.add_btn_bk);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +31,14 @@ public class AddNewClass extends AppCompatActivity {
                 classDescription = classDescriptionInput.getText().toString();
                 newFitClass(className, classDescription);
                 Intent i = new Intent(AddNewClass.this, ManageClassScreen.class);
+                startActivity(i);
+            }
+        });
+
+        bkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AddNewClass.this, AdminLogin.class);
                 startActivity(i);
             }
         });
