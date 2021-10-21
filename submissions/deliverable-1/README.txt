@@ -1,4 +1,6 @@
 # Seg 2105 Term Project
+Repo: https://github.com/KyleDulce-UO/seg2105
+Release Page: https://github.com/KyleDulce-UO/seg2105/releases
 
 ## Testing Details
 Confirmed to work properly (and see all elements properly) using:
