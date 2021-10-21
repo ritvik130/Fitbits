@@ -2,10 +2,13 @@ package me.seg.fitbites;
 
 import com.google.firebase.firestore.auth.User;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import me.seg.fitbites.firebase.AuthManager;
+import me.seg.fitbites.firebase.FirestoreDatabase;
+import me.seg.fitbites.firebase.OnTaskComplete;
 
 public abstract class UserData {
 
@@ -85,6 +88,35 @@ public abstract class UserData {
         // removes the account of a user either instructor or member
         // access to admin
         AuthManager.getInstance().deleteAccount(this);
+    }
+
+    public static void searchUser(String userName, OnTaskComplete<UserData[]> onTaskComplete){
+
+        // returns the searched class
+        //get all classes in database
+
+        FirestoreDatabase.getInstance().getUserList(new OnTaskComplete<UserData[]>() {
+            @Override
+            public void onComplete(UserData[] userData) {
+                if(userName != null) {
+                    ArrayList<UserData> resultList = new ArrayList<>();
+
+
+                    for(UserData c : userData) {
+                        if(c.getEmail().contains(userName)) {
+                            resultList.add(c);
+                        }
+                    }
+                    //list is full of potential search elements
+
+                    onTaskComplete.onComplete(resultList.toArray(new UserData[resultList.size()]));
+
+                } else {
+                    onTaskComplete.onComplete(null);
+                }
+            }
+        });
+
     }
 
 }

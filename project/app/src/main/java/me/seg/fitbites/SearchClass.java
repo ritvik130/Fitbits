@@ -43,6 +43,7 @@ public class SearchClass extends AppCompatActivity {
                 FitClassType.searchClass(classtext.getText().toString(), new OnTaskComplete<FitClassType[]>() {
                     @Override
                     public void onComplete(FitClassType[] result) {
+
                         placeIntoResults(result);
                     }
                 });
