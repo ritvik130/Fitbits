@@ -21,11 +21,13 @@ import me.seg.fitbites.layouts.member.MemberWelcomeActivity;
 import me.seg.fitbites.layouts.instructor.InstructorWelcomeActivity;
 
 public class MainActivity extends AppCompatActivity {
+
     private Button login, signup;
     private TextView user, pass;
     private MainActivity current;
     private AlertDialog.Builder alert;
     private AlertDialog dialog;
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         pass = findViewById(R.id.editTextTextPassword);
         login = findViewById(R.id.loginButton);
         signup = findViewById(R.id.button_signUp);
-
 
         current = this;
         login.setOnClickListener(new View.OnClickListener() {

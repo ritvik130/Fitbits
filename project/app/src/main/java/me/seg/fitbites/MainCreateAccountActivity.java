@@ -31,6 +31,7 @@ public class MainCreateAccountActivity extends AppCompatActivity implements View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_createAccount);
+
         signUpInstructor = findViewById(R.id.signUpButton);
         signUpMember = findViewById(R.id.signUpButton2);
         firstName = findViewById(R.id.editTextTextPersonName3);
@@ -48,19 +49,7 @@ public class MainCreateAccountActivity extends AppCompatActivity implements View
     }
 
     public void onClick(View v) {
-        //String s="";
 
-//        switch (v.getId()) {
-//            case R.id.signUpButton:
-//                s = signUpInstructor.getText().toString();
-//                break;
-//
-//            case R.id.signUpButton2:
-//                s = signUpMember.getText().toString();
-//                break;
-//        }
-
-        //final String s2=s;
         final MainCreateAccountActivity current=this;
 
         if (validateEmail() && checkInfoFilled() && checkAge()) {
@@ -73,9 +62,6 @@ public class MainCreateAccountActivity extends AppCompatActivity implements View
                         reEnter();
 
                     } else {
-//                        UserData userData = new UserData(authResult.getUserData(), firstName.getText().toString(),
-//                                lastName.getText().toString(), username.getText().toString(), address.getText().toString(),
-//                                age.getText().toString(), password.getText().toString(), email.getText().toString());
                         UserData userData = null;
 
                         if(v.getId() == R.id.signUpButton) {
