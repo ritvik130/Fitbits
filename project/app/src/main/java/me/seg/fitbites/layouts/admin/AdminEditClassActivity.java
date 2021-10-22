@@ -19,7 +19,7 @@ public class AdminEditClassActivity extends AppCompatActivity {
 
         Button backBTN,changeClassBTN;
         TextView className,classDescription;
-        setContentView(R.layout.activity_admin_editClass);
+        setContentView(R.layout.activity_admin_editclass);
 
         backBTN = findViewById(R.id.bkbutton);
         className = findViewById(R.id.editTextTextPersonName9);

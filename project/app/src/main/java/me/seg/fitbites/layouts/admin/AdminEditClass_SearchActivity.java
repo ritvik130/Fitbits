@@ -21,7 +21,7 @@ public class AdminEditClass_SearchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_editClass_search);
+        setContentView(R.layout.activity_admin_editclass_search);
 
         searchBTN = findViewById(R.id.searchButton);
         className = findViewById(R.id.classtext);

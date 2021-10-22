@@ -20,7 +20,7 @@ public class AdminAddClassActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_addClass);
+        setContentView(R.layout.activity_admin_addclass);
         classNameInput=(TextView) findViewById(R.id.textView7);
         classDescriptionInput=(TextView) findViewById(R.id.textView8);
         submitButton = (Button) findViewById(R.id.button1);

@@ -27,7 +27,7 @@ public class AdminDeleteUserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_deleteUser);
+        setContentView(R.layout.activity_admin_deleteuser);
 
         memberSearchBar= (EditText) findViewById(R.id.Member_SearchBar);
         searchButton= (Button) findViewById(R.id.SearchButton);

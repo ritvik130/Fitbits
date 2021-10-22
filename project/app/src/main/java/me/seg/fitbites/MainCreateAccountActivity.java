@@ -30,7 +30,7 @@ public class MainCreateAccountActivity extends AppCompatActivity implements View
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_createAccount);
+        setContentView(R.layout.activity_main_createaccount);
 
         signUpInstructor = findViewById(R.id.signUpButton);
         signUpMember = findViewById(R.id.signUpButton2);

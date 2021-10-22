@@ -7,7 +7,6 @@
     android:background="@drawable/background_gradient">
 
     <TextView
-        android:id="@+id/text1"
         android:layout_width="181dp"
         android:layout_height="31dp"
         android:text="@string/admin_addClass_AddNewClass"
@@ -64,7 +63,7 @@
         android:layout_width="282dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:text="@string/Enter1"
+        android:text="@string/admin_addClass_name_over"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +73,7 @@
         android:id="@+id/textView8"
         android:layout_width="291dp"
         android:layout_height="125dp"
-        android:text="@string/Enter2"
+        android:text="@string/admin_addClass_description_over"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.275"

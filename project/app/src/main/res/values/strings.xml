@@ -1,6 +1,7 @@
 <resources>
 
     <!-- Global Strings -->
+    <string name="app_name">Fitbites</string>
     <string name="global_app_name">Fitbites</string>
     <string name="global_back">Back</string>
 
@@ -44,6 +45,8 @@
     <string name="admin_addClass_AddNewClass">Add New Class</string>
     <string name="admin_addClass_NewClassName">New class name: *required*</string>
     <string name="admin_addClass_ClassDescription">Class description: *required*</string>
+    <string name="admin_addClass_name_over">Enter class name:</string>
+    <string name="admin_addClass_description_over">Enter Class description:</string>
     <string name="admin_addClass_CreateClassBTN">Create Class!</string>
 
     <!-- Options Screen -->
@@ -90,7 +93,8 @@
     <string name="Inst_cancel_result">List of Classes:</string>
     <string name="Inst_cancel_rem">Remove</string>
 
-    <!-- Member Screen -->
+    <!-- Member Screens -->
+    <!-- Welcome Screen -->
     <string name="Mem_Welcome_title">Welcome Gym Member\nx!</string>
     <string name="Mem_Welcome_noClass">You have no Scheduled Classes!</string>
     <string name="Mem_Welcome_ClassBtn">Classes</string>

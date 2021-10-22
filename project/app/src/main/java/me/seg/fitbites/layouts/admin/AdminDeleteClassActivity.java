@@ -23,7 +23,7 @@ public class AdminDeleteClassActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_deleteClass);
+        setContentView(R.layout.activity_admin_deleteclass);
 
         searchButton = findViewById(R.id.searchButton);
         classtext = findViewById(R.id.classtext);

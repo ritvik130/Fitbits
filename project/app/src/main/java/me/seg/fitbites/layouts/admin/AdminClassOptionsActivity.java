@@ -14,17 +14,15 @@ public class AdminClassOptionsActivity extends AppCompatActivity {
     private Button addClass;
     private Button removeClass;
     private Button editClass;
-    private Button createTag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_classOptions);
+        setContentView(R.layout.activity_admin_classoptions);
         back = (Button) findViewById(R.id.OptScreenBackBtn);
         addClass= (Button) findViewById(R.id.AddClassBtn);
         removeClass= (Button) findViewById(R.id.RemoveClassBtn);
         editClass= (Button) findViewById(R.id.EditClassBtn);
-        createTag= (Button) findViewById(R.id.CreateTagBtn);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,12 +48,6 @@ public class AdminClassOptionsActivity extends AppCompatActivity {
                 removeClass();
             }
         });
-        createTag.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createTag();
-            }
-        });
     }
     public void back(){
         // goes back to admin login class
@@ -76,8 +68,5 @@ public class AdminClassOptionsActivity extends AppCompatActivity {
         // goes to cancel class screen
         Intent intent= new Intent(this, AdminDeleteClassActivity.class);
         startActivity(intent);
-    }
-    public void createTag(){
-
     }
 }
