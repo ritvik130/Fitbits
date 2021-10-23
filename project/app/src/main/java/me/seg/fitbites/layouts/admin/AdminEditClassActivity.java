@@ -1,6 +1,5 @@
-package me.seg.fitbites;
+package me.seg.fitbites.layouts.admin;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,7 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class ChangeClassScreen extends AppCompatActivity {
+import me.seg.fitbites.R;
+import me.seg.fitbites.data.FitClassType;
+
+public class AdminEditClassActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,21 +19,21 @@ public class ChangeClassScreen extends AppCompatActivity {
 
         Button backBTN,changeClassBTN;
         TextView className,classDescription;
-        setContentView(R.layout.activity_change_class_screen);
+        setContentView(R.layout.activity_admin_editclass);
 
         backBTN = findViewById(R.id.bkbutton);
         className = findViewById(R.id.editTextTextPersonName9);
         classDescription = findViewById(R.id.editTextTextPersonName10);
         changeClassBTN = findViewById(R.id.button2);
 
-        final ChangeClassScreen current = this;
+        final AdminEditClassActivity current = this;
 
         backBTN.setOnClickListener(new View.OnClickListener()
 
         {
             @Override
             public void onClick (View v){
-                Intent intent = new Intent(current, AdminLogin.class);
+                Intent intent = new Intent(current, AdminWelcomeActivity.class);
                 startActivity(intent);
             }
 
@@ -45,7 +47,7 @@ public class ChangeClassScreen extends AppCompatActivity {
                 String uid= getIntent().getExtras().getString("uid");
                 FitClassType c= new FitClassType(uid, className.getText().toString(), classDescription.getText().toString());
                 c.updateDatabase();
-                Intent intent = new Intent(current, Search_Class_Edit.class);
+                Intent intent = new Intent(current, AdminEditClass_SearchActivity.class);
 
                 startActivity(intent);
             }

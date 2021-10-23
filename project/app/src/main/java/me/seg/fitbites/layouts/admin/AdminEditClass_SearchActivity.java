@@ -1,4 +1,4 @@
-package me.seg.fitbites;
+package me.seg.fitbites.layouts.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,17 +9,19 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import me.seg.fitbites.R;
+import me.seg.fitbites.data.FitClassType;
 import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
-public class Search_Class_Edit extends AppCompatActivity {
+public class AdminEditClass_SearchActivity extends AppCompatActivity {
     private Button searchBTN, bkBtn;
     private TextView className;
     private FirestoreDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_class_edit);
+        setContentView(R.layout.activity_admin_editclass_search);
 
         searchBTN = findViewById(R.id.searchButton);
         className = findViewById(R.id.classtext);
@@ -70,7 +72,7 @@ public class Search_Class_Edit extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Search_Class_Edit.this, ChangeClassScreen.class);
+                    Intent intent = new Intent(AdminEditClass_SearchActivity.this, AdminEditClassActivity.class);
                     intent.putExtra("uid",c.getUid());
                     startActivity(intent);
                 }
@@ -87,7 +89,7 @@ public class Search_Class_Edit extends AppCompatActivity {
         bkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Search_Class_Edit.this, ManageClassScreen.class);
+                Intent i = new Intent(AdminEditClass_SearchActivity.this, AdminClassOptionsActivity.class);
                 startActivity(i);
             }
         });

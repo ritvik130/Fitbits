@@ -1,4 +1,4 @@
-package me.seg.fitbites;
+package me.seg.fitbites.layouts.instructor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import me.seg.fitbites.MainActivity;
+import me.seg.fitbites.R;
 import me.seg.fitbites.firebase.AuthManager;
 
-public class InstructorWelcome extends AppCompatActivity {
+public class InstructorWelcomeActivity extends AppCompatActivity {
     private TextView title;
     private Button signout;
     @Override
@@ -26,7 +28,7 @@ public class InstructorWelcome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AuthManager.getInstance().signoutUser();
-                Intent i = new Intent(InstructorWelcome.this, MainActivity.class);
+                Intent i = new Intent(InstructorWelcomeActivity.this, MainActivity.class);
                 startActivity(i);
             }
         });

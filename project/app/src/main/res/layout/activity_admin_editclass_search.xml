@@ -11,7 +11,7 @@
         android:layout_width="79dp"
         android:layout_height="31dp"
         android:layout_marginStart="166dp"
-        android:text="Search"
+        android:text="@string/admin_search_btn"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/classtext" />
@@ -27,7 +27,7 @@
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
-            android:id="@+id/searchresultslayout"
+            android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
@@ -39,7 +39,7 @@
         android:layout_height="34dp"
         android:layout_marginStart="6dp"
         android:layout_marginTop="7dp"
-        android:text="Back"
+        android:text="@string/global_back"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
         android:layout_marginTop="87dp"
-        android:text="Enter Class Name:"
+        android:text="@string/admin_search_enter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SearchClassHeader" />
 
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="93dp"
         android:layout_marginTop="22dp"
-        android:text="Search Class"
+        android:text="@string/admin_search_title"
         app:layout_constraintStart_toEndOf="@+id/search_class_back_btn"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
         android:layout_marginTop="67dp"
-        android:text="Search Results:"
+        android:text="@string/admin_search_results"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/classtext" />
 </androidx.constraintlayout.widget.ConstraintLayout>

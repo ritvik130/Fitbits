@@ -1,4 +1,4 @@
-package me.seg.fitbites;
+package me.seg.fitbites.layouts.admin;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,17 +11,19 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import me.seg.fitbites.R;
+import me.seg.fitbites.data.FitClassType;
 import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
-public class SearchClass extends AppCompatActivity {
+public class AdminDeleteClassActivity extends AppCompatActivity {
     private Button searchButton, bkBtn;
     private TextView classtext;
     private FirestoreDatabase db;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.search_class_screen);
+        setContentView(R.layout.activity_admin_deleteclass);
 
         searchButton = findViewById(R.id.searchButton);
         classtext = findViewById(R.id.classtext);
@@ -56,7 +58,7 @@ public class SearchClass extends AppCompatActivity {
         bkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(SearchClass.this, ManageClassScreen.class);
+                Intent i = new Intent(AdminDeleteClassActivity.this, AdminClassOptionsActivity.class);
                 startActivity(i);
             }
         });
@@ -86,14 +88,14 @@ public class SearchClass extends AppCompatActivity {
 
                             if (DialogInterface.BUTTON_POSITIVE == which) {
                                 FirestoreDatabase.getInstance().deleteFitClassType(c);
-                                Intent intent = new Intent(SearchClass.this, AdminLogin.class);
+                                Intent intent = new Intent(AdminDeleteClassActivity.this, AdminWelcomeActivity.class);
                                 startActivity(intent);
                             }
 
                         }
                     };
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(SearchClass.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(AdminDeleteClassActivity.this);
                     builder.setMessage("Are you sure you want to remove this class?")
                             .setPositiveButton("Yes",dialogListener)
                                 .setNegativeButton("No", dialogListener);

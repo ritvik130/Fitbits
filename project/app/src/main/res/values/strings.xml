@@ -1,66 +1,104 @@
 <resources>
 
+    <!-- Global Strings -->
     <string name="app_name">Fitbites</string>
-    <string name="welcomeUser">Welcome to Fitbites!</string>
-    <string name="loginTxt">Login</string>
-    <string name="username">Username:</string>
-    <string name="password">Password:</string>
-    <string name="signup">Sign up for Instructor!</string>
-    <string name="signup2">Sign up for Member!</string>
-    <string name="signup3">Sign up!</string>
-    <string name="title_activity_class_screen">ClassScreen</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="firstname">Firstname:</string>
-    <string name="lastname">Lastname:</string>
-    <string name="address">Address: </string>
-    <string name="email">Email: </string>
+    <string name="global_app_name">Fitbites</string>
+    <string name="global_back">Back</string>
 
+    <!-- Main Activities -->
+    <!-- activity_main -->
+    <string name="main_welcomeUser">Welcome to Fitbites!</string>
+    <string name="main_login_Lbl">Login</string>
+    <string name="main_username_Lbl">Username:</string>
+    <string name="main_password_Lbl">Password:</string>
+    <string name="main_signup_Btn">Sign up!</string>
 
-    <string name="age">Age:</string>
-    <string name="title">WELCOME ADMIN!</string>
-    <string name="title2">You are logged in as Admin</string>
-    <string name="title3">What would you like to do?</string>
-    <string name="ManageClasses">Manage Classes</string>
-    <string name="DeleteAccounts">Delete Account</string>
-    <string name="NewClasses">Add New Classes</string>
-    <string name="ReportUsers">Report Users</string>
-    <string name="Admin_Signout">Sign out</string>
+    <!-- activity_main_createAccount -->
+    <string name="main_createAccount_signup">Sign up for Account</string>
 
-    <string name="AddNewClass">Add New Class</string>
-    <string name="NewClassName">New class name: *required*</string>
-    <string name="ClassDescription">Class description: *required*</string>
-    <string name="CreateClassBTN">Create Class!</string>
-    <string name="Enter1"></string>
-    <string name="Enter2"></string>
+    <string name="main_createAccount_firstname">Firstname:</string>
+    <string name="main_createAccount_lastname">Lastname:</string>
+    <string name="main_createAccount_address">Address:</string>
+    <string name="main_createAccount_email">Email:</string>
+    <string name="main_createAccount_username">Username:</string>
+    <string name="main_createAccount_password">Password:</string>
+    <string name="main_createAccount_age">Age:</string>
 
+    <string name="main_createAccount_signup_inst">Sign up for Instructor!</string>
+    <string name="main_createAccount_signup_mem">Sign up for Member!</string>
 
-    <!-- Instructor Screen -->
-    <string name="Inst_title">Welcome Instructor\nx!</string>
-    <string name="Inst_addBtn">Add Class</string>
-    <string name="Inst_editBtn">Edit Class</string>
-    <string name="Inst_DeleteBtn">Delete Class</string>
-    <string name="Inst_noClass">You have no Scheduled Classes!</string>
-    <string name="Inst_signout">Sign Out</string>
+    <string name="main_createAccount_user_prompt">Pick a Username</string>
+    <string name="main_createAccount_password_prompt">Pick a Password</string>
 
-    <!-- Member Screen -->
-    <string name="Mem_title">Welcome Gym Member\nx!</string>
-    <string name="Mem_noClass">You have no Scheduled Classes!</string>
-    <string name="Mem_ClassBtn">Classes</string>
-    <string name="welGm_signout">Sign Out</string>
+    <!-- Admin Screens -->
+    <!-- Welcome Screen -->
+    <string name="admin_welcome_title">WELCOME ADMIN!</string>
+    <string name="admin_welcome_conf">You are logged in as Admin</string>
+    <string name="admin_welcome_ques">What would you like to do?</string>
 
-    //change class screen
-    <string name="back">Back</string>
-    <string name="class_name"> </string>
-    <string name="class_description"> </string>
-    <string name="change_class"> </string>
-    <string name="changeClass">Change Class!</string>
+    <string name="admin_welcome_ManageClassesBtn">Manage Classes</string>
+    <string name="admin_welcome_DeleteAccountsBtn">Delete Account</string>
+    <string name="admin_welcome_NewClassesBtn">Add New Classes</string>
+    <string name="admin_welcome_SignoutBtn">Sign out</string>
+
+    <!-- Add Class Screen -->
+    <string name="admin_addClass_AddNewClass">Add New Class</string>
+    <string name="admin_addClass_NewClassName">New class name: *required*</string>
+    <string name="admin_addClass_ClassDescription">Class description: *required*</string>
+    <string name="admin_addClass_name_over">Enter class name:</string>
+    <string name="admin_addClass_description_over">Enter Class description:</string>
+    <string name="admin_addClass_CreateClassBTN">Create Class!</string>
+
+    <!-- Options Screen -->
+    <string name="admin_options_add">Add Class</string>
+    <string name="admin_options_remove">Remove Class</string>
+    <string name="admin_options_edit">Edit Class</string>
+
+    <!-- Search Screens -->
+    <string name="admin_search_title">Search Classes</string>
+    <string name="admin_search_enter">Enter Class Name</string>
+    <string name="admin_search_btn">Search</string>
+    <string name="admin_search_results">Search Results</string>
+
+    <!-- Search Users -->
+    <string name="admin_searchU_bar">Enter Member Email</string>
+
+    <!-- Edit Class -->
+    <string name="admin_edit_name">New class name:</string>
+    <string name="admin_edit_description">Class description:</string>
+    <string name="admin_edit_name_over">Enter class name:</string>
+    <string name="admin_edit_description_over">Enter Class description:</string>
+    <string name="admin_edit_btn">Change Class Details</string>
+
+    <!-- Instructor Screens -->
+    <!-- Welcome Screen -->
+    <string name="Inst_Welcome_title">Welcome Instructor\nx!</string>
+    <string name="Inst_Welcome_addBtn">Add Class</string>
+    <string name="Inst_Welcome_editBtn">Edit Class</string>
+    <string name="Inst_Welcome_DeleteBtn">Delete Class</string>
+    <string name="Inst_Welcome_noClass">You have no Scheduled Classes!</string>
+    <string name="Inst_Welcome_signout">Sign Out</string>
+
+    <!-- Add Class Screen -->
+    <string name="Inst_add_title">Schedule New Class</string>
+    <string name="Inst_add_selClass">Select class to add:</string>
+    <string name="Inst_add_diff">Difficulty:</string>
+    <string name="Inst_add_dat">Date and Time</string>
+    <string name="Inst_add_cap">Enter Capacity</string>
+    <string name="Inst_add_des">Add Description</string>
+    <string name="Inst_add_sch">Schedule Class</string>
+
+    <!-- Cancel Class Screen -->
+    <string name="Inst_cancel_title">Cancel Class</string>
+    <string name="Inst_cancel_result">List of Classes:</string>
+    <string name="Inst_cancel_rem">Remove</string>
+
+    <!-- Member Screens -->
+    <!-- Welcome Screen -->
+    <string name="Mem_Welcome_title">Welcome Gym Member\nx!</string>
+    <string name="Mem_Welcome_noClass">You have no Scheduled Classes!</string>
+    <string name="Mem_Welcome_ClassBtn">Classes</string>
+    <string name="Mem_Welcome_signout">Sign Out</string>
 
 
 </resources>

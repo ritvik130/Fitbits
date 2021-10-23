@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InstructorWelcome"
+    tools:context=".layouts.instructor.InstructorWelcomeActivity"
     android:background="@drawable/background_gradient">
 
     <TableRow
@@ -26,7 +26,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/Mem_ClassBtn" />
+            android:text="@string/Mem_Welcome_ClassBtn" />
 
         <Space
             android:layout_width="0dp"
@@ -38,7 +38,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/welGm_signout" />
+            android:text="@string/Mem_Welcome_signout" />
 
         <Space
             android:layout_width="0dp"
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="@string/Mem_title"
+        android:text="@string/Mem_Welcome_title"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -85,7 +85,7 @@
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Mem_noClass"
+                    android:text="@string/Mem_Welcome_noClass"
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </androidx.cardview.widget.CardView>

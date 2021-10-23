@@ -1,7 +1,4 @@
-package me.seg.fitbites;
-
-import java.util.HashMap;
-import java.util.Map;
+package me.seg.fitbites.data;
 
 public class GymMember extends UserData {
 

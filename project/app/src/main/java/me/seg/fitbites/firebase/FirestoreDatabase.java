@@ -6,11 +6,15 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.*;
 import com.google.firebase.firestore.*;
-import com.google.firebase.firestore.auth.User;
 
 import java.util.ArrayList;
 
-import me.seg.fitbites.*;
+import me.seg.fitbites.data.Admin;
+import me.seg.fitbites.data.FitClass;
+import me.seg.fitbites.data.FitClassType;
+import me.seg.fitbites.data.GymMember;
+import me.seg.fitbites.data.Instructor;
+import me.seg.fitbites.data.UserData;
 
 public class FirestoreDatabase {
 

@@ -1,4 +1,4 @@
-package me.seg.fitbites;
+package me.seg.fitbites.data;
 
 import android.util.Log;
 

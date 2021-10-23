@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="91dp"
         android:layout_marginTop="18dp"
-        android:text="Difficulty:"
+        android:text="@string/Inst_add_diff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ClassAddSeekBar" />
 
@@ -30,10 +30,10 @@
         android:id="@+id/AddClassHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
         android:layout_marginTop="16dp"
-        android:text="Add Class"
+        android:text="@string/Inst_add_title"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="91dp"
         android:layout_marginTop="30dp"
-        android:text="Select class to add:"
+        android:text="@string/Inst_add_selClass"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AddClassHeader" />
 
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="91dp"
         android:layout_marginTop="32dp"
-        android:text="Select Date and Time:"
+        android:text="@string/Inst_add_dat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DifficultySeekBar" />
 
@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="91dp"
         android:layout_marginTop="47dp"
-        android:text="Enter Capacity:"
+        android:text="@string/Inst_add_cap"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
@@ -112,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="91dp"
         android:layout_marginTop="20dp"
-        android:text="Add Description:"
+        android:text="@string/Inst_add_des"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AddClassCapacity" />
 
@@ -120,9 +120,9 @@
         android:id="@+id/FinalizeAddClassBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
         android:layout_marginTop="9dp"
-        android:text="Add Class"
+        android:text="@string/Inst_add_sch"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AddClassDesc" />
 
@@ -132,7 +132,7 @@
         android:layout_height="36dp"
         android:layout_marginStart="13dp"
         android:layout_marginTop="10dp"
-        android:text="Back"
+        android:text="@string/global_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

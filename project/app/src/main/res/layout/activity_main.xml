@@ -29,7 +29,7 @@
                 android:layout_height="40pt"
                 android:layout_gravity="bottom|center_horizontal"
                 android:fontFamily="@font/italianno"
-                android:text="@string/app_name"
+                android:text="@string/global_app_name"
                 android:textColor="@color/white"
                 android:textSize="96sp" />
 
@@ -46,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|top"
-                android:text="@string/welcomeUser"
+                android:text="@string/main_welcomeUser"
                 android:textColor="@color/white" />
 
         </TableRow>
@@ -61,11 +61,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
                 android:orientation="vertical"
-                android:text="@string/loginTxt"
+                android:text="@string/main_login_Lbl"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                android:translationX="-100dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:translationX="-100dp" />
 
         </TableRow>
 
@@ -79,11 +79,11 @@
                 android:layout_height="10pt"
                 android:layout_gravity="center_horizontal|bottom"
                 android:orientation="vertical"
-                android:text="@string/username"
+                android:text="@string/main_username_Lbl"
                 android:textColor="@color/white"
                 android:textSize="13sp"
-                android:translationX="-90dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:translationX="-90dp" />
 
         </TableRow>
 
@@ -115,10 +115,10 @@
                 android:layout_height="10pt"
                 android:layout_gravity="center_horizontal|bottom"
                 android:orientation="vertical"
-                android:text="@string/password"
+                android:text="@string/main_password_Lbl"
                 android:textSize="13sp"
-                android:translationX="-90dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:translationX="-90dp" />
 
         </TableRow>
 
@@ -156,7 +156,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
-                android:text="@string/loginTxt" />
+                android:text="@string/main_login_Lbl" />
         </TableRow>
 
         <TableRow
@@ -176,7 +176,7 @@
                 android:id="@+id/button_signUp"
                 android:layout_width="318dp"
                 android:layout_height="match_parent"
-                android:text="Sign Up" />
+                android:text="@string/main_signup_Btn" />
         </TableRow>
 
     </TableLayout>
