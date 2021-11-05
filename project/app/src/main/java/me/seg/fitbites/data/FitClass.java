@@ -57,10 +57,34 @@ public class FitClass {
 
 
 
+    public void checkCollision(OnTaskComplete<Boolean> a){
+
+        FirestoreDatabase.getInstance().getAvailableClasses(new OnTaskComplete<FitClass[]>() {
+            @Override
+            public void onComplete(FitClass[] result) {
+                for (FitClass i: result){
+                    if(i.getDate() == FitClass.this.getDate() && i.getFitClassTypeUid() == FitClass.this.getFitClassTypeUid()){
+                        a.onComplete(true);
+                        return;
+                    }
+
+                }
+
+                a.onComplete(false);
+                return;
+            }
+        });
+
+    }
+
+
     public static FitClass createClass(FitClassType type){
         // creates a new Class
         //generates a uuid. likelihood of uuid collisions is essentially 0 therefore no duplicate checks
         //required.
+
+
+
         UUID uuid = UUID.randomUUID();
 
         FitClass fc = new FitClass(uuid.toString(), type.getUid(), null,  null, 690, 420, null);
@@ -108,7 +132,7 @@ public class FitClass {
                                             }
                                         }
                                     }
-                                    //uid does not exist ignore element
+                                    // uid does not exist ignore element
                                 }
 
                                 //list is full of potential search elements
@@ -134,4 +158,41 @@ public class FitClass {
         // access to instructor
         System.out.println(cla+"class has been cancelled. ");
     }
+
+    public void searchClassByTeacher(String lastName, OnTaskComplete<FitClass []> onTaskComplete){
+
+
+        Instructor.searchInstructor(lastName, new OnTaskComplete<Instructor[]>() {
+            @Override
+            public void onComplete(Instructor[] instructors) {
+
+                if(instructors == null || instructors.length == 0){
+                    onTaskComplete.onComplete(null);
+                    return;
+                }
+
+                FirestoreDatabase.getInstance().getAvailableClasses(new OnTaskComplete<FitClass[]>() {
+                    @Override
+                    public void onComplete(FitClass[] result) {
+                        ArrayList<FitClass> list = new ArrayList<>();
+
+                        outside:
+                        for (FitClass i: result){
+                            for (Instructor j: instructors){
+                                if (i.getTeacherUID().equals(j.getUid())){
+                                    list.add(i);
+                                    continue outside;
+                                }
+                            }
+                        }
+                        onTaskComplete.onComplete(list.toArray(new FitClass[list.size()]));
+
+                    }
+                });
+            }
+        });
+
+
+    }
+
 }
