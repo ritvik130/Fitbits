@@ -13,16 +13,49 @@ public class FitClass {
     private String uid;
     //The uid of the FitClass type it belongs to
     private String fitClassTypeUid;
+    private String teacherUID;
 
-    public FitClass(String uid, String typeuid) {
+
+    private Days date;
+    private int time;
+    private int capacity;
+    private Difficulty difficulty;
+
+    public FitClass(String uid, String typeuid, String teacherUID, Days day, int time, int maxCapacity, Difficulty difficulty) {
         this.uid = uid;
         this.fitClassTypeUid = typeuid;
+        this.teacherUID = teacherUID;
+        this.date = day;
+        this.time = time;
+        this.capacity = maxCapacity;
+        this.difficulty = difficulty;
     }
+
+
+    public int convertTime(int hours, int minutes){
+        return hours*60 + minutes;
+    }
+
 
     public FitClass() {}
 
     public String getUid() { return uid; }
     public String getFitClassTypeUid(){ return fitClassTypeUid; };
+    public String getTeacherUID(){ return teacherUID; }
+    public void setUID(String uid){ this.uid = uid; }
+    public void setFitClassTypeUid(String fitClassTypeUid){ this.fitClassTypeUid = fitClassTypeUid; }
+    public void setTeacherUID(String teacherUID){ this.teacherUID = teacherUID; }
+    public int getTime(){ return time; }
+    public void setTime(int time){ this.time = time; }
+    public void setCapacity(int cap){ this.capacity = cap; }
+    public int getCapacity(){ return this.capacity; }
+    public void setDifficulty(Difficulty difficulty){ this.difficulty = difficulty; }
+    public Difficulty getDifficulty(){ return this.difficulty; }
+    public Days getDate() { return date; }
+    public void setDate(Days date) { this.date = date; }
+
+
+
 
     public static FitClass createClass(FitClassType type){
         // creates a new Class
@@ -30,7 +63,7 @@ public class FitClass {
         //required.
         UUID uuid = UUID.randomUUID();
 
-        FitClass fc = new FitClass(uuid.toString(), type.getUid());
+        FitClass fc = new FitClass(uuid.toString(), type.getUid(), null,  null, 690, 420, null);
 
         FirestoreDatabase.getInstance().setFitClass(fc);
 
