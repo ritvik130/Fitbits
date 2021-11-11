@@ -50,8 +50,8 @@ public class FitClass {
     public void setCapacity(int cap){ this.capacity = cap; }
     public int getCapacity(){ return this.capacity; }
     public void setDifficulty(Difficulty difficulty){ this.difficulty = difficulty; }
-    public Difficulty getDifficulty(){ return this.difficulty; }
-    public Days getDate() { return date; }
+    public int getDifficulty(){ return this.difficulty; }
+    public int getDate() { return date; }
     public void setDate(Days date) { this.date = date; }
 
 
