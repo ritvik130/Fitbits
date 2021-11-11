@@ -18,13 +18,13 @@ public class UserData {
     protected String firstName;
     protected String lastName;
     protected String userName;
-    protected String age;
+    protected int age;
     protected String address;
     protected String label = "null";
     protected String password;
     protected String email;
 
-    public UserData(String uid, String firstName, String lastName, String userName, String address, String age, String password, String email){
+    public UserData(String uid, String firstName, String lastName, String userName, String address, int age, String password, String email){
         this.uid = uid;
         this.firstName=firstName;
         this.address=address;
@@ -71,11 +71,11 @@ public class UserData {
         this.address = address;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

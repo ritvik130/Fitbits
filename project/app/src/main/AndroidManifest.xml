@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitbites">
         <activity
+            android:name=".AddClassScreen"
+            android:exported="true" />
+        <activity
             android:name=".Search_Class_Edit"
             android:exported="true" />
         <activity

@@ -21,7 +21,7 @@ public class ChangeClassScreen extends AppCompatActivity {
 
 
 
-        backBTN = findViewById(R.id.button);
+        backBTN = findViewById(R.id.button1);
         className = findViewById(R.id.editTextTextPersonName9);
         classDescription = findViewById(R.id.editTextTextPersonName10);
         changeClassBTN = findViewById(R.id.button2);

@@ -72,9 +72,10 @@ public class SignUpPage extends AppCompatActivity {
                         reEnter();
 
                     } else {
+
                         UserData userData = new UserData(authResult.getUserData(), firstName.getText().toString(),
                                 lastName.getText().toString(), username.getText().toString(), address.getText().toString(),
-                                age.getText().toString(), password.getText().toString(), email.getText().toString());
+                                Integer.parseInt(age.getText().toString()), password.getText().toString(), email.getText().toString());
 
                         FirestoreDatabase.getInstance().setUserData(userData);
                         AuthManager.getInstance().setCurrentLogInData(userData);
