@@ -5,6 +5,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import me.seg.fitbites.firebase.AuthManager;
 import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
 
@@ -32,7 +33,7 @@ public class FitClass {
     }
 
 
-    public int convertTime(int hours, int minutes){
+    public static int convertTime(int hours, int minutes){
         return hours*60 + minutes;
     }
 
@@ -83,8 +84,6 @@ public class FitClass {
         //generates a uuid. likelihood of uuid collisions is essentially 0 therefore no duplicate checks
         //required.
 
-
-
         UUID uuid = UUID.randomUUID();
 
         FitClass fc = new FitClass(uuid.toString(), type.getUid(), null,  null, 690, 420, null);
@@ -94,15 +93,14 @@ public class FitClass {
         return fc;
     }
 
-    public void deleteClass(){
-        // deletes a class
-        // access to instructor
-    }
-
-    public void editClass(String className, String description){
+    public void updateClass(){
         // edits a class
         // access to instructor
+        if(AuthManager.getInstance().getCurrentUserData() instanceof Instructor) {
+            FirestoreDatabase.getInstance().setFitClass(this);
+        }
     }
+
     public static void searchClass(String className, OnTaskComplete<FitClass[]> onTaskComplete){
         // returns the searched class
 
@@ -153,10 +151,12 @@ public class FitClass {
 
     }
 
-    public void cancelClass(FitClass cla){
+    public void cancelClass(){
         //cancels a class
         // access to instructor
-        System.out.println(cla+"class has been cancelled. ");
+        if(AuthManager.getInstance().getCurrentUserData() instanceof Instructor) {
+            FirestoreDatabase.getInstance().deleteFitClass(this);
+        }
     }
 
     public void searchClassByTeacher(String lastName, OnTaskComplete<FitClass []> onTaskComplete){
