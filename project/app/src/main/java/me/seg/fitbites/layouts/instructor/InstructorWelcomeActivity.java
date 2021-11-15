@@ -14,7 +14,7 @@ import me.seg.fitbites.firebase.AuthManager;
 
 public class InstructorWelcomeActivity extends AppCompatActivity {
     private TextView title;
-    private Button signout;
+    private Button signout, addClass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,5 +32,15 @@ public class InstructorWelcomeActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        addClass=(Button) findViewById(R.id.AddClassBtn);
+        addClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(InstructorWelcomeActivity.this,InstructorAddClassActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 }
