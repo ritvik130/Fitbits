@@ -90,8 +90,11 @@
 
     <!-- Cancel Class Screen -->
     <string name="Inst_cancel_title">Cancel Class</string>
-    <string name="Inst_cancel_result">List of Classes:</string>
+    <string name="Inst_cancel_result">Enter Class to Cancel:</string>
     <string name="Inst_cancel_rem">Remove</string>
+
+
+
 
     <!-- Member Screens -->
     <!-- Welcome Screen -->
