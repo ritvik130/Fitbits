@@ -55,7 +55,7 @@ public class InstructorAddClassActivity extends AppCompatActivity {
         backButton=findViewById(R.id.AddClassBackBtn);
         searchButton=findViewById(R.id.searchButton1);
         classText=findViewById(R.id.classText);
-
+        addCLass=findViewById(R.id.FinalizeAddClassBtn);
 
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,13 +71,11 @@ public class InstructorAddClassActivity extends AppCompatActivity {
             }
         });
 
-        backButton.setOnClickListener((View.OnClickListener) this);
-        final InstructorAddClassActivity current = this;
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(current, InstructorWelcomeActivity.class);
-                startActivity(intent);
+                Intent i= new Intent(InstructorAddClassActivity.this,InstructorWelcomeActivity.class);
+                startActivity(i);
             }
         });
 
