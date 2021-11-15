@@ -24,7 +24,7 @@ public class AdminEditClass_SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_editclass_search);
 
         searchBTN = findViewById(R.id.searchButton);
-        className = findViewById(R.id.classtext);
+        className = findViewById(R.id.classText);
         bkBtn = findViewById(R.id.search_class_back_btn);
 
         //final ChangeClassScreen current = this;

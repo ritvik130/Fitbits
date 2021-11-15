@@ -80,13 +80,25 @@
     <string name="Inst_Welcome_signout">Sign Out</string>
 
     <!-- Add Class Screen -->
+    <string name="instr_back">Back</string>
+    <string name="add_class_heading">Schedule New Class</string>
+    <string name="inst_select_class">Select class to add:</string>
     <string name="Inst_add_title">Schedule New Class</string>
     <string name="Inst_add_selClass">Select class to add:</string>
-    <string name="Inst_add_diff">Difficulty:</string>
-    <string name="Inst_add_dat">Date and Time</string>
-    <string name="Inst_add_cap">Enter Capacity</string>
-    <string name="Inst_add_des">Add Description</string>
-    <string name="Inst_add_sch">Schedule Class</string>
+    <string name="inst_search"> Search </string>
+    <string name="inst_diff">Difficulty:</string>
+    <string name="inst_beginner">Beginner</string>
+    <string name="inst_inter">Intermediate</string>
+    <string name="inst_expert">Expert</string>
+    <string name="inst_add_date">Add Date</string>
+    <string name="inst_add_time">Add Time</string>
+    <string name="inst_selDate">Select Date</string>
+    <string name="inst_selTime">Select Time</string>
+    <string name="inst_enter_capacity">Enter Capacity</string>
+    <string name="inst_class_capacity">Class Capacity</string>
+    <string name="inst_add_des">Add Description</string>
+    <string name="inst_add_class">Add Class</string>
+
 
     <!-- Cancel Class Screen -->
     <string name="Inst_cancel_title">Cancel Class</string>

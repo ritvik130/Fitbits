@@ -52,9 +52,13 @@
         <entry key="..\:/Work/Second Year/SEG2105/Term Project/seg2105/project/app/src/main/res/layout/search_class_screen.xml" value="0.38179347826086957" />
         <entry key="..\:/Work/Second Year/SEG2105/Term Project/seg2105/project/app/src/main/res/layout/search_user_screen.xml" value="0.32708333333333334" />
         <entry key="..\:/Work/Second Year/SEG2105/Term Project/seg2105/project/app/src/main/res/layout/sign_up.xml" value="0.5541666666666667" />
+        <entry key="app/src/main/res/layout/activity_add_class_screen.xml" value="0.22146739130434784" />
+        <entry key="app/src/main/res/layout/activity_admin_addclass.xml" value="0.20878623188405798" />
         <entry key="app/src/main/res/layout/activity_cancel_class.xml" value="0.26132246376811596" />
         <entry key="app/src/main/res/layout/activity_change_classScreen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_class_screen.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_instructor_add_class.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_instructor_addclass.xml" value="0.22146739130434784" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26721014492753625" />
         <entry key="app/src/main/res/layout/sign_up.xml" value="0.26721014492753625" />
       </map>
