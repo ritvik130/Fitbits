@@ -50,6 +50,18 @@
             android:layout_weight="0.25" />
 
         <Button
+            android:id="@+id/Inst_wel_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Inst_Welcome_find" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25" />
+
+        <Button
             android:id="@+id/AddClassBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

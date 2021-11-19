@@ -72,7 +72,7 @@ public class FitClass {
                 }
 
                 a.onComplete(false);
-                return;
+
             }
         });
 
@@ -135,7 +135,6 @@ public class FitClass {
 
                                 //list is full of potential search elements
                                 onTaskComplete.onComplete(resultList.toArray(new FitClass[resultList.size()]));
-
                             } else {
                                 Log.w("Process", "Something went wrong. you shouldnt be seeing this message. Code 601");
                                 onTaskComplete.onComplete(null);
@@ -159,8 +158,7 @@ public class FitClass {
         }
     }
 
-    public void searchClassByTeacher(String lastName, OnTaskComplete<FitClass []> onTaskComplete){
-
+    public static void searchClassByTeacher(String lastName, OnTaskComplete<FitClass []> onTaskComplete){
 
         Instructor.searchInstructor(lastName, new OnTaskComplete<Instructor[]>() {
             @Override
@@ -186,6 +184,7 @@ public class FitClass {
                             }
                         }
                         onTaskComplete.onComplete(list.toArray(new FitClass[list.size()]));
+
 
                     }
                 });

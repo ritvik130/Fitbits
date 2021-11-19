@@ -76,6 +76,7 @@
     <string name="Inst_Welcome_addBtn">Add Class</string>
     <string name="Inst_Welcome_editBtn">Edit Class</string>
     <string name="Inst_Welcome_DeleteBtn">Delete Class</string>
+    <string name = "Inst_Welcome_find">Find Class</string>
     <string name="Inst_Welcome_noClass">You have no Scheduled Classes!</string>
     <string name="Inst_Welcome_signout">Sign Out</string>
 
@@ -93,8 +94,14 @@
     <string name="Inst_cancel_result">Enter Class to Cancel:</string>
     <string name="Inst_cancel_rem">Remove</string>
 
-
-
+    <!-- Search Class Screen -->
+    <string name = "Inst_search_class">Search for a class</string>
+    <string name = "Inst_name">Name</string>
+    <string name = "Inst_class">Class</string>
+    <string name = "Inst_switch">Click Button to switch search settings</string>
+    <string name = "Inst_search">Search</string>
+    <string name = "Inst_name_toggle">Enter instructor last name</string>
+    <string name = "Inst_class_toggle">Enter name of class</string>
 
     <!-- Member Screens -->
     <!-- Welcome Screen -->
