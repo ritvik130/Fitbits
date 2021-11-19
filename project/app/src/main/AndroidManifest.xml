@@ -10,16 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitbites">
         <activity
+            android:name=".layouts.instructor.instructor_search_class"
+            android:exported="true" />
+        <activity
             android:name=".layouts.admin.AdminEditClass_SearchActivity"
             android:exported="true" />
-		<activity
+        <activity
             android:name=".layouts.member.MemberWelcomeActivity"
             android:exported="true" />
         <activity
             android:name=".layouts.instructor.InstructorCancelClassActivity"
             android:exported="true" />
-		<activity
-			android:name=".layouts.instructor.InstructorWelcomeActivity"
+        <activity
+            android:name=".layouts.instructor.InstructorWelcomeActivity"
             android:exported="true" />
         <activity
             android:name=".layouts.admin.AdminEditClassActivity"

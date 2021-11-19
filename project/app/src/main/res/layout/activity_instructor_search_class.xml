@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient">
+
+
+    <TextView
+        android:id="@+id/inst_search_title"
+        android:layout_width="202dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/Inst_search_class"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/inst_search_toggle"
+        android:layout_width="76dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="132dp"
+        android:textOff="@string/Inst_name"
+        android:textOn="@string/Inst_class"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inst_search_by_toggle"
+        android:layout_width="230dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="212dp"
+        android:ems="10"
+        android:hint="@string/Inst_name_toggle"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/inst_search_toggle_text"
+        android:layout_width="195dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="136dp"
+        android:text="@string/Inst_switch"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/inst_search_listOfUsers"
+        android:layout_width="351dp"
+        android:layout_height="427dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="288dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/inst_search_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="212dp"
+        android:text="@string/Inst_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
