@@ -18,6 +18,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.widget.LinearLayout;
@@ -45,27 +46,24 @@ public class InstructorCancelClassActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instructor_cancel_class);
 
-        RemoveClass = findViewById(R.id.classtext);
+        RemoveClass = findViewById(R.id.classText);
         removeBTN = findViewById(R.id.searchButton3);
         searchBTN = findViewById(R.id.searchButton);
         backBTN = findViewById(R.id.search_class_back_btn);
 
-        final InstructorCancelClassActivity current=this;
+        final InstructorCancelClassActivity current = this;
 
         backBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  Intent i = new Intent(current,);//TODO ?
-               // startActivity(i);
+                Intent i = new Intent(InstructorCancelClassActivity.this, InstructorWelcomeActivity.class);
+                startActivity(i);
             }
         });
 
-
-        searchBTN.setOnClickListener(new View.OnClickListener()
-
-        {
+        searchBTN.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View v){
+            public void onClick(View v) {
                 FitClass.searchClass(RemoveClass.getText().toString(), new OnTaskComplete<FitClass[]>() {
                     @Override
                     public void onComplete(FitClass[] result) {
@@ -73,12 +71,52 @@ public class InstructorCancelClassActivity extends AppCompatActivity {
                         placeIntoResults(result);
                     }
                 });
-
-
             }
-
         });
-
     }
+    public void placeIntoResults(FitClass[] r) {
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layout2);
+        LinearLayout.LayoutParams layoutP = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
+        layout.removeAllViews();
+        boolean addedAtLeastOne = false;
+
+        for (FitClass c : r) {// class description
+            addedAtLeastOne = true;
+            Button button = new Button(this);
+
+            int time = c.getTime();
+            String difficulty = c.getDifficulty().toString();
+            String date = c.getDateObj().toStringShort();
+            int capacity = c.getCapacity();
+
+            FirestoreDatabase.getInstance().getFitClassType(c.getFitClassTypeUid(), new OnTaskComplete<FitClassType>() {
+                @SuppressLint("SetTextI18n")
+                @Override
+                public void onComplete(FitClassType result) {
+                    String classname = result.getClassName();
+
+                    button.setText(classname + "-" + date + "-" + time + "-" + difficulty + "-" + capacity + " capacity");
+
+                }
+            });
+            layout.addView(button, layoutP);
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) { //won't do anything until remove is clicked
+                    removeBTN.setOnClickListener(new View.OnClickListener() {//delete FitClass
+                        @Override
+                        public void onClick(View v) {
+                            //remove from db
+                            FirestoreDatabase.getInstance().deleteFitClass(c);
+
+                            Intent i = new Intent(InstructorCancelClassActivity.this, InstructorWelcomeActivity.class);
+                            startActivity(i);
+                        }
+                    });
+                }
+            });
+        }
+    }
 }

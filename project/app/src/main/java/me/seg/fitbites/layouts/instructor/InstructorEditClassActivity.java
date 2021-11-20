@@ -1,54 +1,36 @@
 package me.seg.fitbites.layouts.instructor;
-import static me.seg.fitbites.data.FitClass.createClass;
-import static me.seg.fitbites.data.FitClass.searchClass;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.DialogInterface;
-import android.os.Bundle;
-import me.seg.fitbites.R;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
-
+import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.google.firebase.firestore.FirebaseFirestore;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
-import me.seg.fitbites.data.Instructor;
-import me.seg.fitbites.firebase.AuthManager;
-import me.seg.fitbites.firebase.FirestoreDatabase;
-
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
 
+import me.seg.fitbites.R;
 import me.seg.fitbites.data.Days;
 import me.seg.fitbites.data.Difficulty;
 import me.seg.fitbites.data.FitClass;
 import me.seg.fitbites.data.FitClassType;
+import me.seg.fitbites.firebase.AuthManager;
 import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
-import me.seg.fitbites.layouts.admin.AdminDeleteClassActivity;
-import me.seg.fitbites.layouts.admin.AdminWelcomeActivity;
-import java.util.ArrayList;
 
-public class InstructorAddClassActivity extends AppCompatActivity{
+public class InstructorEditClassActivity extends AppCompatActivity{
 
     private RadioGroup radioGroup;
     private RadioButton radioButton;
@@ -66,7 +48,7 @@ public class InstructorAddClassActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_instructor_add_class);
+        setContentView(R.layout.activity_instructor_edit_class);
 
         radioGroup= findViewById(R.id.radioGroup);
         dateButton= findViewById(R.id.addDateButton);
@@ -89,7 +71,7 @@ public class InstructorAddClassActivity extends AppCompatActivity{
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(InstructorAddClassActivity.this,InstructorWelcomeActivity.class);
+                Intent i= new Intent(InstructorEditClassActivity.this,InstructorWelcomeActivity.class);
                 startActivity(i);
             }
         });
@@ -104,7 +86,7 @@ public class InstructorAddClassActivity extends AppCompatActivity{
         picktime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new TimePickerDialog(InstructorAddClassActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                new TimePickerDialog(InstructorEditClassActivity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         time = FitClass.convertTime(hourOfDay, minute);
@@ -170,35 +152,36 @@ public class InstructorAddClassActivity extends AppCompatActivity{
     }
 
     private void handleAddClassButton(){
-        FirestoreDatabase.getInstance().getFitClassType(getIntent().getExtras().getString("classuid"), new OnTaskComplete<FitClassType>() {
+        //FirestoreDatabase.getInstance().getFitClassType(getIntent().getExtras().getString("classuid"), new OnTaskComplete<FitClassType>() {
+        FirestoreDatabase.getInstance().getFitClass(getIntent().getExtras().getString("classuid"), new OnTaskComplete<FitClass>() {
             @Override
-            public void onComplete(FitClassType result) {
+            public void onComplete(FitClass fcResult) {
+
                 if(capText.getText() != null) {
                     capacity=Integer.parseInt(capText.getText().toString());
                 } else {
                     capacity = 5;
                 }
 
-                FitClass fitClass= FitClass.createClass(result);
-                fitClass.setCapacity(capacity);
-                fitClass.setDifficulty(difficulty);
-                fitClass.setTime(time);
-                fitClass.setDateObj(day);
-                fitClass.setTeacherUID(AuthManager.getInstance().getCurrentUserData().getUid());
+                fcResult.setCapacity(capacity);
+                fcResult.setDifficulty(difficulty);
+                fcResult.setTime(time);
+                fcResult.setDateObj(day);
+                fcResult.setTeacherUID(AuthManager.getInstance().getCurrentUserData().getUid());
 
-                fitClass.checkCollision(new OnTaskComplete<Boolean>() {
+                fcResult.checkCollision(new OnTaskComplete<Boolean>() {
                     @Override
                     public void onComplete(Boolean result) {
                         if (result==true || capacity <= 0){
-                            AlertDialog.Builder nullParams = new AlertDialog.Builder(InstructorAddClassActivity.this);
+                            AlertDialog.Builder nullParams = new AlertDialog.Builder(InstructorEditClassActivity.this);
                             nullParams.setCancelable(true);
                             nullParams.setTitle("*Error*");
                             nullParams.setMessage("CLASSES CANNOT BE MADE ON THE SAME DAY AND CLASS CAPACITIES MUST BE GREATER THAN 0");
                             AlertDialog error = nullParams.create();
                             error.show();
                         }else{
-                            FirestoreDatabase.getInstance().setFitClass(fitClass);
-                            Intent i = new Intent(InstructorAddClassActivity.this, InstructorWelcomeActivity.class);
+                            FirestoreDatabase.getInstance().setFitClass(fcResult);
+                            Intent i = new Intent(InstructorEditClassActivity.this, InstructorWelcomeActivity.class);
                             startActivity(i);
                         }
                     }

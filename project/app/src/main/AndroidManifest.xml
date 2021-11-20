@@ -25,6 +25,18 @@
             android:name=".layouts.instructor.InstructorWelcomeActivity"
             android:exported="true" />
         <activity
+            android:name=".layouts.instructor.instructor_search_class"
+            android:exported="true" />
+        <activity
+            android:name=".layouts.instructor.InstructorAddClass_SearchActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layouts.instructor.InstructorEditClass_SearchActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layouts.instructor.InstructorEditClassActivity"
+            android:exported="true" />
+        <activity
             android:name=".layouts.admin.AdminEditClassActivity"
             android:exported="true" /> <!-- <activity -->
         <!-- android:name=".ui.login.ClassScreen" -->

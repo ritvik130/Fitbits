@@ -54,7 +54,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/Inst_Welcome_find" />
+            android:text="@string/Inst_Welcome_find"
+            android:textSize="12sp" />
 
         <Space
             android:layout_width="0dp"
@@ -137,9 +138,10 @@
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Inst_Welcome_noClass"
+                    android:text="To see all classes, press See all classes"
                     android:textAlignment="center"
                     android:textSize="20sp" />
+
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>

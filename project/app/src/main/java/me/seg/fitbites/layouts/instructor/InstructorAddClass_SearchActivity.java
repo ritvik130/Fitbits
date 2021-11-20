@@ -83,7 +83,7 @@ public class InstructorAddClass_SearchActivity extends AppCompatActivity {
         bkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(InstructorAddClass_SearchActivity.this, AdminClassOptionsActivity.class);
+                Intent i = new Intent(InstructorAddClass_SearchActivity.this, InstructorWelcomeActivity.class);
                 startActivity(i);
             }
         });
