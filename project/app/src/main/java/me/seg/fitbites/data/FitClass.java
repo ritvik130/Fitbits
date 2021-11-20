@@ -14,12 +14,11 @@ public class FitClass {
     //The uid of the FitClass type it belongs to
     private String fitClassTypeUid;
     private String teacherUID;
-
-
     private Days date;
     private int time;
     private int capacity;
     private Difficulty difficulty;
+    private String className;
 
     public FitClass(String uid, String typeuid, String teacherUID, Days day, int time, int maxCapacity, Difficulty difficulty) {
         this.uid = uid;
@@ -53,8 +52,9 @@ public class FitClass {
     public Difficulty getDifficulty(){ return this.difficulty; }
     public Days getDate() { return date; }
     public void setDate(Days date) { this.date = date; }
-
-
+    public String getClassName() {
+        return className;
+    }
 
 
     public void checkCollision(OnTaskComplete<Boolean> a){
