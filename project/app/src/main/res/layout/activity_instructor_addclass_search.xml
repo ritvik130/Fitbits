@@ -14,18 +14,7 @@
         android:text="@string/admin_search_btn"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/classtext" />
-
-    <Button
-        android:id="@+id/searchButton3"
-        android:layout_width="79dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="424dp"
-        android:text="@string/Inst_cancel_rem"
-        android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/classtext" />
+        app:layout_constraintTop_toBottomOf="@+id/classText" />
 
     <ScrollView
         android:id="@+id/user_results"
@@ -38,7 +27,7 @@
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
-            android:id="@+id/layout2"
+            android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
@@ -57,9 +46,10 @@
 
     <EditText
         android:id="@+id/classText"
-        android:layout_width="252dp"
-        android:layout_height="204dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="2dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="93dp"
         android:layout_marginTop="22dp"
-        android:text="@string/Inst_cancel_title"
+        android:text="@string/admin_search_title"
         app:layout_constraintStart_toEndOf="@+id/search_class_back_btn"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -93,5 +83,5 @@
         android:layout_marginTop="67dp"
         android:text="@string/admin_search_results"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/classtext" />
+        app:layout_constraintTop_toBottomOf="@+id/classText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

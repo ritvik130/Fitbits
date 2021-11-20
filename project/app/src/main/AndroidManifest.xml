@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitbites">
         <activity
-            android:name=".layouts.instructor.instructor_search_class"
+            android:name=".layouts.instructor.InstructorAddClassActivity"
             android:exported="true" />
         <activity
             android:name=".layouts.admin.AdminEditClass_SearchActivity"

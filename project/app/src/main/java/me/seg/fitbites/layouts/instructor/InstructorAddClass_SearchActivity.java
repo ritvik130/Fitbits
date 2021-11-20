@@ -1,6 +1,4 @@
-package me.seg.fitbites.layouts.admin;
-
-import androidx.appcompat.app.AppCompatActivity;
+package me.seg.fitbites.layouts.instructor;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,19 +7,23 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import me.seg.fitbites.R;
 import me.seg.fitbites.data.FitClassType;
 import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
+import me.seg.fitbites.layouts.admin.AdminClassOptionsActivity;
+import me.seg.fitbites.layouts.admin.AdminEditClassActivity;
 
-public class AdminEditClass_SearchActivity extends AppCompatActivity {
+public class InstructorAddClass_SearchActivity extends AppCompatActivity {
     private Button searchBTN, bkBtn;
     private TextView className;
     private FirestoreDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_editclass_search);
+        setContentView(R.layout.activity_instructor_addclass_search);
 
         searchBTN = findViewById(R.id.searchButton);
         className = findViewById(R.id.classText);
@@ -35,10 +37,7 @@ public class AdminEditClass_SearchActivity extends AppCompatActivity {
                 placeIntoResults(result);
             }
         });
-
-
         searchBTN.setOnClickListener(new View.OnClickListener()
-
         {
             @Override
             public void onClick (View v){
@@ -48,18 +47,13 @@ public class AdminEditClass_SearchActivity extends AppCompatActivity {
                         placeIntoResults(result);
                     }
                 });
-
-
             }
-
         });
-
-
     }
 
 
     public void placeIntoResults(FitClassType[] r){
-        LinearLayout layout = (LinearLayout)findViewById(R.id.layout2);
+        LinearLayout layout = (LinearLayout)findViewById(R.id.layout1);
         LinearLayout.LayoutParams layoutP= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
         layout.removeAllViews();
@@ -72,8 +66,8 @@ public class AdminEditClass_SearchActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(AdminEditClass_SearchActivity.this, AdminEditClassActivity.class);
-                    intent.putExtra("uid",c.getUid());
+                    Intent intent = new Intent(InstructorAddClass_SearchActivity.this, InstructorAddClassActivity.class);
+                    intent.putExtra("classuid",c.getUid());
                     startActivity(intent);
                 }
             });
@@ -89,7 +83,7 @@ public class AdminEditClass_SearchActivity extends AppCompatActivity {
         bkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AdminEditClass_SearchActivity.this, AdminClassOptionsActivity.class);
+                Intent i = new Intent(InstructorAddClass_SearchActivity.this, AdminClassOptionsActivity.class);
                 startActivity(i);
             }
         });

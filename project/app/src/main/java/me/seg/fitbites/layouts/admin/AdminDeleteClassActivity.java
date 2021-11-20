@@ -26,7 +26,7 @@ public class AdminDeleteClassActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_deleteclass);
 
         searchButton = findViewById(R.id.searchButton);
-        classtext = findViewById(R.id.classtext);
+        classtext = findViewById(R.id.classText);
         bkBtn = findViewById(R.id.search_class_back_btn);
 
         //final ChangeClassScreen current = this;

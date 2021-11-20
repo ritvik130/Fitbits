@@ -2,12 +2,24 @@ package me.seg.fitbites.layouts.instructor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
+import java.util.Calendar;
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -69,73 +81,4 @@ public class InstructorCancelClassActivity extends AppCompatActivity {
 
     }
 
-
-
-
-    public void placeIntoResults(FitClass[] r) {
-        LinearLayout layout = (LinearLayout) findViewById(R.id.layout2);
-        LinearLayout.LayoutParams layoutP = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-
-        layout.removeAllViews();
-        boolean addedAtLeastOne = false;
-
-        for (FitClass c : r) {// class description
-            addedAtLeastOne = true;
-            Button button = new Button(this);
-
-            int time = c.getTime();
-            String difficulty = c.getDifficulty().toString();
-            String date = c.getDate().toStringShort();
-            int capacity = c.getCapacity();
-
-            FirestoreDatabase.getInstance().getFitClassType(c.getUid(), new OnTaskComplete<FitClassType>() {
-                @SuppressLint("SetTextI18n")
-                @Override
-                public void onComplete(FitClassType result) {
-                    String classname = result.getClassName();
-
-                    button.setText(classname + "/n" + date + "/n" + time + "/n" + difficulty + "/n" + capacity);
-
-                }
-            });
-            layout.addView(button, layoutP);
-
-
-            button.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) { //won't do anything until remove is clicked
-
-
-
-                    removeBTN.setOnClickListener(new View.OnClickListener() {//delete FitClass
-                        @Override
-                        public void onClick(View v) {
-
-                            //remove from db
-
-                            FirestoreDatabase.getInstance().deleteFitClass(c);
-
-                        }
-                    });
-
-
-                }
-            });
-
-
-        }
-
-
-
-
-
-    }
-
-
-
-
 }
-
-
-
