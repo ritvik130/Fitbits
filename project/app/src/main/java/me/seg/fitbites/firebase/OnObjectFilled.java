@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 import me.seg.fitbites.data.ClassInfoDisplay;
 
-public interface OnObjectFilled {
+public interface nObjectFilled {
     public void onObjectReady();
 }
