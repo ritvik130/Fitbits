@@ -79,8 +79,6 @@ public class InstructorAddClassActivity extends AppCompatActivity{
         classCapacity=findViewById(R.id.capacityTextView);
         result=findViewById(R.id.listView);
 
-        database=FirebaseFirestore.getInstance();
-
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -178,64 +176,37 @@ public class InstructorAddClassActivity extends AppCompatActivity{
     }
 
     private void handleAddClassButton(){
-        capacity=Integer.parseInt(classCapacity.getText().toString());
-        duration=Integer.parseInt(durationTextView.getText().toString());
-
-        FitClass fitClass = new FitClass();
-        fitClass=createClass(searchSelection);
-        fitClass.setCapacity(capacity);
-        fitClass.setDifficulty(difficulty);
-        fitClass.setTime(duration);
-
-        searchSelection.checkCollision(new OnTaskComplete<Boolean>() {
+        FirestoreDatabase.getInstance().getFitClassType(getIntent().getExtras().getString("classuid"), new OnTaskComplete<FitClassType>() {
             @Override
-            public void onComplete(Boolean result) {
+            public void onComplete(FitClassType result) {
+                capacity=Integer.parseInt(classCapacity.getText().toString());
+                duration=Integer.parseInt(durationTextView.getText().toString());
 
+                FitClass fitClass= FitClass.createClass(result);
+                fitClass.setCapacity(capacity);
+                fitClass.setDifficulty(difficulty);
+                fitClass.setTime(duration);
+
+                searchSelection.checkCollision(new OnTaskComplete<Boolean>() {
+                    @Override
+                    public void onComplete(Boolean result) {
+                        if (result==true){
+                            AlertDialog.Builder nullParams = new AlertDialog.Builder(InstructorAddClassActivity.this);
+                            nullParams.setCancelable(true);
+                            nullParams.setTitle("*Error*");
+                            nullParams.setMessage("All information must be filled!");
+                            AlertDialog error = nullParams.create();
+                            error.show();
+                        }else{
+                            FirestoreDatabase.getInstance().setFitClass(fitClass);
+                        }
+                    }
+                });
             }
         });
 
-    }
-    private void handleSearchButton(FitClass[] result){
-        LinearLayout layout = (LinearLayout)findViewById(R.id.searchresultslayout);
-        LinearLayout.LayoutParams layoutP= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        layout.removeAllViews();
-        boolean addedAtLeastOne = false;
-
-        FitClass[] r;
-        for (FitClass c: result) {
-            addedAtLeastOne = true;
-            Button button = new Button(this);
-            button.setText(c.getClassName());
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    DialogInterface.OnClickListener dialogListener = new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            if (DialogInterface.BUTTON_POSITIVE == which) {
-                                FirestoreDatabase.getInstance();
-
-                            }
-
-                        }
-                    };
-                    AlertDialog.Builder builder = new AlertDialog.Builder(InstructorAddClassActivity.this);
-                    builder.setMessage("Are you sure you want to select this class?")
-                            .setPositiveButton("Yes", dialogListener)
-                            .setNegativeButton("No", dialogListener);
-                    builder.show();
-                }
-            });
-            layout.addView(button, layoutP);
-        }
-            if (!addedAtLeastOne) {
-                TextView v = new TextView(this);
-                v.setText("No Classes Found");
-                layout.addView(v, layoutP);
-            }
 
     }
+
 }

@@ -8,6 +8,16 @@
     android:background="@drawable/background_gradient">
 
 
+    <TextView
+        android:id="@+id/bar2_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/inst_diff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
     <EditText
         android:id="@+id/classText"
         android:layout_width="195dp"
@@ -24,10 +34,11 @@
         android:id="@+id/radioGroup"
         android:layout_width="263dp"
         android:layout_height="96dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.337"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="328dp">
+        app:layout_constraintTop_toBottomOf="@+id/bar2_text">
 
         <RadioButton
             android:id="@+id/radio_three"
@@ -87,10 +98,10 @@
         android:id="@+id/FinalizeAddClassBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:text="@string/inst_add_class"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ClassCapacityText" />
 
@@ -170,7 +181,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-    <ListView
+    <androidx.recyclerview.widget.ListView
         android:id="@+id/listView"
         android:layout_width="195dp"
         android:layout_height="66dp"
@@ -178,15 +189,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.342"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/classText" >
-
-        <TextView
-            android:id="@+id/bar2_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/inst_diff" />
-    </ListView>
+        app:layout_constraintTop_toBottomOf="@+id/classText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
