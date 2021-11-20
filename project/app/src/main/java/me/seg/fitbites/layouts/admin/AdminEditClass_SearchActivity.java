@@ -59,7 +59,7 @@ public class AdminEditClass_SearchActivity extends AppCompatActivity {
 
 
     public void placeIntoResults(FitClassType[] r){
-        LinearLayout layout = (LinearLayout)findViewById(R.id.layout1);
+        LinearLayout layout = (LinearLayout)findViewById(R.id.layout2);
         LinearLayout.LayoutParams layoutP= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
         layout.removeAllViews();

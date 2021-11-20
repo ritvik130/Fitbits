@@ -20,6 +20,7 @@ public class InstructorWelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instructor_welcome);
 
+        search = findViewById(R.id.Inst_wel_search);
         title = findViewById(R.id.Inst_Title);
         title.setText(title.getText().toString().replace("x", AuthManager.getInstance().getCurrentUserData().getFirstName()));
 
@@ -42,5 +43,11 @@ public class InstructorWelcomeActivity extends AppCompatActivity {
             }
         });
 
+        search.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent i = new Intent(InstructorWelcomeActivity.this, instructor_search_class.class);
+                startActivity(i);
+            }
+        });
     }
 }
