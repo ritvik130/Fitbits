@@ -6,8 +6,13 @@
         <entry key="..\:/DriveDocuments/GitHub/seg2105/project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.15885416666666666" />
         <entry key="..\:/DriveDocuments/GitHub/seg2105/project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15885416666666666" />
         <entry key="..\:/DriveDocuments/GitHub/seg2105/project/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/activity_instructor_add_class.xml" value="0.4" />
         <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/activity_instructor_addclass_search.xml" value="0.264" />
-        <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/activity_instructor_welcome.xml" value="0.2" />
+        <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/activity_instructor_cancel_class.xml" value="0.4" />
+        <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/activity_instructor_edit_class.xml" value="0.264" />
+        <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/activity_instructor_editclass_search.xml" value="0.4" />
+        <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/activity_instructor_search_class.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/activity_instructor_welcome.xml" value="0.4" />
         <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/activity_main.xml" value="0.21875" />
         <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/admin_login.xml" value="0.25226449275362317" />
         <entry key="..\:/Users/Kylej/Documents/git/seg2105/project/app/src/main/res/layout/search_user_screen.xml" value="0.25226449275362317" />

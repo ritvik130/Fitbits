@@ -128,7 +128,7 @@ public class instructor_search_class extends AppCompatActivity {
                     }
                 }
             });
-            date.add(f.getDate().toString());
+            date.add(f.getDateObj().toString());
             cI.setDate(date);
         }
         Log.e("test", date.size()+"");

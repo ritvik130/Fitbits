@@ -2,9 +2,10 @@ package me.seg.fitbites.data;
 
 public enum Difficulty {
 
-    BEGINNER("BEGINNER");
-    INTERMEDIATE("INTERMEDIATE");
-    EXPERIENCED("EXPERIENCED");
+    BEGINNER("BEGINNER"),
+    INTERMEDIATE("INTERMEDIATE"),
+    EXPERIENCED("EXPERIENCED")
+    ;
 
 
     private String level;

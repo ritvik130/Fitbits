@@ -120,7 +120,7 @@ public class TestInstrumentationAll {
         //test fitclasstype and fitclass
         FitClassType fct = FitClassType.createFitClassType("random test", "random test");
         FitClass fc = FitClass.createClass(fct);
-        fc.setDate(Days.MONDAY);
+        fc.setDateObj(Days.MONDAY);
         fc.setTime(FitClass.convertTime(8, 30));
         fc.setDifficulty(Difficulty.EXPERIENCED);
 
@@ -136,7 +136,7 @@ public class TestInstrumentationAll {
 
                 //verify equals
                 assertEquals(fc.getUid(), result.getUid());
-                assertEquals(fc.getDate(), result.getDate());
+                assertEquals(fc.getDateObj(), result.getDateObj());
                 assertEquals(fc.getTime(), result.getTime());
                 assertEquals(fc.getDifficulty(), result.getDifficulty());
 

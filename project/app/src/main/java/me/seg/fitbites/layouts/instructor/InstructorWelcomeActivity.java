@@ -14,7 +14,7 @@ import me.seg.fitbites.firebase.AuthManager;
 
 public class InstructorWelcomeActivity extends AppCompatActivity {
     private TextView title;
-    private Button signout, addClass;
+    private Button signout, addClass, search, cancelClass, editClass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,7 @@ public class InstructorWelcomeActivity extends AppCompatActivity {
         addClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(InstructorWelcomeActivity.this,InstructorAddClassActivity.class);
+                Intent i= new Intent(InstructorWelcomeActivity.this,InstructorAddClass_SearchActivity.class);
                 startActivity(i);
             }
         });
@@ -46,6 +46,24 @@ public class InstructorWelcomeActivity extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent i = new Intent(InstructorWelcomeActivity.this, instructor_search_class.class);
+                startActivity(i);
+            }
+        });
+
+        cancelClass= (Button) findViewById(R.id.DeleteClassBtn);
+        cancelClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(InstructorWelcomeActivity.this, InstructorCancelClassActivity.class);
+                startActivity(i);
+            }
+        });
+
+        editClass = (Button) findViewById(R.id.EditClassBtn);
+        editClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(InstructorWelcomeActivity.this, InstructorEditClass_SearchActivity.class);
                 startActivity(i);
             }
         });

@@ -76,7 +76,7 @@
     <string name="Inst_Welcome_addBtn">Add Class</string>
     <string name="Inst_Welcome_editBtn">Edit Class</string>
     <string name="Inst_Welcome_DeleteBtn">Delete Class</string>
-    <string name = "Inst_Welcome_find">Find Class</string>
+    <string name = "Inst_Welcome_find">See All Classes</string>
     <string name="Inst_Welcome_noClass">You have no Scheduled Classes!</string>
     <string name="Inst_Welcome_signout">Sign Out</string>
 
@@ -94,8 +94,8 @@
     <string name="inst_add_date">Add Date</string>
 
     <string name="inst_selDate">Select Date</string>
-    <string name="inst_selTime">Add duration: </string>
-    <string name="inst_duration">Duration</string>
+    <string name="inst_selTime">Select Time</string>
+    <string name="inst_duration">Pick Time</string>
     <string name="inst_enter_capacity">Enter Capacity</string>
     <string name="inst_class_capacity">Class Capacity</string>
     <string name="inst_add_des">Add Description</string>

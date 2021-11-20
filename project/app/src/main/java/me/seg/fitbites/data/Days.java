@@ -3,13 +3,13 @@ package me.seg.fitbites.data;
 public enum Days {
 
 
-    SUNDAY("Sunday", "Sun"),
-    MONDAY("Monday", "Mon"),
-    TUESDAY("Tuesday", "Tues"),
-    WEDENSDAY("Wednesday", "Wed"),
-    THURSDAY("Thursday", "Thurs"),
-    FRIDAY("Friday", "Fri"),
-    SATURDAY("Saturday", "Sat");
+    SUNDAY("SUNDAY", "Sun"),
+    MONDAY("MONDAY", "Mon"),
+    TUESDAY("TUESDAY", "Tues"),
+    WEDNESDAY("WEDNESDAY", "Wed"),
+    THURSDAY("THURSDAY", "Thurs"),
+    FRIDAY("FRIDAY", "Fri"),
+    SATURDAY("SATURDAY", "Sat");
 
     private String form;
     private String sform;
@@ -22,7 +22,6 @@ public enum Days {
     public String toString() {
         return form;
     }
-
     public String toStringShort() {
         return sform;
     }

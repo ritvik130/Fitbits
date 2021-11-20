@@ -2,6 +2,8 @@ package me.seg.fitbites.data;
 
 import android.util.Log;
 
+import com.google.firebase.firestore.Exclude;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -19,7 +21,6 @@ public class FitClass {
     private int time;
     private int capacity;
     private Difficulty difficulty;
-    private String className;
 
     public FitClass(String uid, String typeuid, String teacherUID, Days day, int time, int maxCapacity, Difficulty difficulty) {
         this.uid = uid;
@@ -51,11 +52,12 @@ public class FitClass {
     public int getCapacity(){ return this.capacity; }
     public void setDifficulty(Difficulty difficulty){ this.difficulty = difficulty; }
     public Difficulty getDifficulty(){ return this.difficulty; }
-    public Days getDate() { return date; }
-    public void setDate(Days date) { this.date = date; }
-    public String getClassName() {
-        return className;
-    }
+    @Exclude
+    public Days getDateObj() { return date; }
+    @Exclude
+    public void setDateObj(Days date) { this.date = date; }
+    public String getDate() {return date.toString(); }
+    public void setDate(String d) { this.date = Days.valueOf(d); }
 
 
     public void checkCollision(OnTaskComplete<Boolean> a){
@@ -64,7 +66,8 @@ public class FitClass {
             @Override
             public void onComplete(FitClass[] result) {
                 for (FitClass i: result){
-                    if(i.getDate() == FitClass.this.getDate() && i.getFitClassTypeUid() == FitClass.this.getFitClassTypeUid()){
+                    if(i.getDateObj() == FitClass.this.getDateObj() && i.getFitClassTypeUid().equals(FitClass.this.getFitClassTypeUid())){
+
                         a.onComplete(true);
                         return;
                     }
@@ -86,9 +89,7 @@ public class FitClass {
 
         UUID uuid = UUID.randomUUID();
 
-        FitClass fc = new FitClass(uuid.toString(), type.getUid(), null,  null, 690, 420, null);
-
-        FirestoreDatabase.getInstance().setFitClass(fc);
+        FitClass fc = new FitClass(uuid.toString(), type.getUid(), null,  Days.SUNDAY, 690, 420, null);
 
         return fc;
     }
