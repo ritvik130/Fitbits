@@ -8,21 +8,11 @@
     android:background="@drawable/background_gradient">
 
 
-    <TextView
-        android:id="@+id/bar2_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/inst_diff"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
-
     <EditText
         android:id="@+id/classText"
         android:layout_width="195dp"
         android:layout_height="37dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,11 +24,10 @@
         android:id="@+id/radioGroup"
         android:layout_width="263dp"
         android:layout_height="96dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bar2_text">
+        tools:layout_editor_absoluteY="236dp">
 
         <RadioButton
             android:id="@+id/radio_three"
@@ -87,10 +76,10 @@
         android:id="@+id/ClassCapacityText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:text="@string/inst_enter_capacity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -148,17 +137,6 @@
         app:layout_constraintStart_toEndOf="@+id/ClassCapacityText"
         app:layout_constraintTop_toBottomOf="@+id/DurationTextView" />
 
-    <Button
-        android:id="@+id/searchButton1"
-        android:layout_width="81dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="100dp"
-        android:text="@string/inst_search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toEndOf="@+id/classText"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -175,19 +153,20 @@
         android:id="@+id/DurationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="144dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="152dp"
         android:hint="@string/inst_duration"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-    <androidx.recyclerview.widget.ListView
-        android:id="@+id/listView"
-        android:layout_width="195dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="20dp"
+    <TextView
+        android:id="@+id/Difficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/inst_diff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.342"
+        app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/classText" />
 

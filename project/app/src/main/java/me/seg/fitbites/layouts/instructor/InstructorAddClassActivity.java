@@ -79,17 +79,6 @@ public class InstructorAddClassActivity extends AppCompatActivity{
         classCapacity=findViewById(R.id.capacityTextView);
         result=findViewById(R.id.listView);
 
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                searchClass(classText.getText().toString(), new OnTaskComplete<FitClass[]>() {
-                    @Override
-                    public void onComplete(FitClass[] result) {
-                        handleSearchButton(result);
-                    }
-                });
-            }
-        });
 
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
