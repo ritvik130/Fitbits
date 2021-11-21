@@ -5,6 +5,9 @@ import android.util.Log;
 import com.google.firebase.firestore.Exclude;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.UUID;
 
 import me.seg.fitbites.firebase.AuthManager;
@@ -19,8 +22,10 @@ public class FitClass {
     private String teacherUID;
     private Days date;
     private int time;
+    private int EndTime;
     private int capacity;
     private Difficulty difficulty;
+    private LinkedList<String> memberIdList;
 
     public FitClass(String uid, String typeuid, String teacherUID, Days day, int time, int maxCapacity, Difficulty difficulty) {
         this.uid = uid;
@@ -30,6 +35,7 @@ public class FitClass {
         this.time = time;
         this.capacity = maxCapacity;
         this.difficulty = difficulty;
+        memberIdList = new LinkedList<>();
     }
 
 
@@ -48,6 +54,8 @@ public class FitClass {
     public void setTeacherUID(String teacherUID){ this.teacherUID = teacherUID; }
     public int getTime(){ return time; }
     public void setTime(int time){ this.time = time; }
+    public int getEndTime(){ return this.EndTime; }
+    public void setEndTime(int time){ this.EndTime = time; }
     public void setCapacity(int cap){ this.capacity = cap; }
     public int getCapacity(){ return this.capacity; }
     public void setDifficulty(Difficulty difficulty){ this.difficulty = difficulty; }
@@ -58,6 +66,12 @@ public class FitClass {
     public void setDateObj(Days date) { this.date = date; }
     public String getDate() {return date.toString(); }
     public void setDate(String d) { this.date = Days.valueOf(d); }
+    public void setMemberIdList(List<String> ml) { memberIdList = new LinkedList<String>(ml); }
+    public List<String> getMemberIdList() { return memberIdList; }
+    @Exclude
+    public int getMemberListSize() { return memberIdList.size(); }
+    public void enrollMember(UserData ud) { memberIdList.add(ud.getUid()); }
+    public void unenrollMember(UserData ud) { memberIdList.remove(ud.getUid()); }
 
 
     public void checkCollision(OnTaskComplete<Boolean> a){

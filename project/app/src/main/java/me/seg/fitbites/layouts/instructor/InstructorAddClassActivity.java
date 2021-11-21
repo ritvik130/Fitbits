@@ -52,12 +52,12 @@ public class InstructorAddClassActivity extends AppCompatActivity{
 
     private RadioGroup radioGroup;
     private RadioButton radioButton;
-    private Button addCLass,backButton, dateButton, picktime;
+    private Button addCLass,backButton, dateButton, picktime, picktimeend;
     private TextView dateTextView, durationTextView,classCapacity;
     private EditText classText, capText;
     private Difficulty difficulty = Difficulty.BEGINNER;
     private String difficultySelection;
-    private int capacity = 5, time = 420;
+    private int capacity = 5, time = 420, timeEnd = 480;
     private Days day = Days.SUNDAY;
     private ArrayList<FitClass> resultList= new ArrayList<>();
 
@@ -77,6 +77,7 @@ public class InstructorAddClassActivity extends AppCompatActivity{
         addCLass=findViewById(R.id.FinalizeAddClassBtn);
         classCapacity=findViewById(R.id.capacityTextView);
         picktime = findViewById(R.id.picktime);
+        picktimeend = findViewById(R.id.picktimeend);
         capText = findViewById(R.id.capacityEdit);
 
         dateButton.setOnClickListener(new View.OnClickListener() {
@@ -108,8 +109,35 @@ public class InstructorAddClassActivity extends AppCompatActivity{
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         time = FitClass.convertTime(hourOfDay, minute);
+
+                        if(timeEnd < time) {
+                            timeEnd = time + 60;
+                        }
                     }
                 }, time/60, time % 60, true).show();
+            }
+        });
+
+        picktimeend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new TimePickerDialog(InstructorAddClassActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        int t = FitClass.convertTime(hourOfDay, minute);
+                        if(t > time)
+                            timeEnd = t;
+                        else {
+                            AlertDialog.Builder nullParams = new AlertDialog.Builder(InstructorAddClassActivity.this);
+                            nullParams.setCancelable(true);
+                            nullParams.setTitle("*Error*");
+                            nullParams.setMessage("End time must be after the start time");
+                            AlertDialog error = nullParams.create();
+                            error.show();
+                            timeEnd = t + 60;
+                        }
+                    }
+                }, timeEnd/60, timeEnd % 60, true).show();
             }
         });
     }
@@ -183,6 +211,7 @@ public class InstructorAddClassActivity extends AppCompatActivity{
                 fitClass.setCapacity(capacity);
                 fitClass.setDifficulty(difficulty);
                 fitClass.setTime(time);
+                fitClass.setEndTime(timeEnd);
                 fitClass.setDateObj(day);
                 fitClass.setTeacherUID(AuthManager.getInstance().getCurrentUserData().getUid());
 

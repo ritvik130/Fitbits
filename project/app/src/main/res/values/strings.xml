@@ -96,6 +96,7 @@
     <string name="inst_selDate">Select Date</string>
     <string name="inst_selTime">Select Time</string>
     <string name="inst_duration">Pick Time</string>
+    <string name="inst_duration2">Pick End Time</string>
     <string name="inst_enter_capacity">Enter Capacity</string>
     <string name="inst_class_capacity">Class Capacity</string>
     <string name="inst_add_des">Add Description</string>
