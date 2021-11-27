@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813"
+        app:layout_constraintVertical_bias="0.815"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
@@ -30,8 +30,8 @@
         android:id="@+id/search_class_back_btn"
         android:layout_width="65dp"
         android:layout_height="48dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:text="@string/global_back"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,33 +40,33 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="297dp"
-        android:layout_height="39dp"
+        android:layout_height="30dp"
         android:text="@string/class_enroll"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.101" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="297dp"
-        android:layout_height="39dp"
+        android:id="@+id/textView13"
+        android:layout_width="310dp"
+        android:layout_height="28dp"
         android:text="@string/Enter_day"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintHorizontal_bias="0.603"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.258" />
+        app:layout_constraintVertical_bias="0.266" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/editTextTextPersonName12"
         android:layout_width="293dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -77,11 +77,11 @@
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.168"
+        app:layout_constraintVertical_bias="0.332"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName11"
+        android:id="@+id/editTextTextPersonName13"
         android:layout_width="293dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -89,23 +89,23 @@
         android:text="@string/blank"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332"
+        app:layout_constraintVertical_bias="0.161"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="78dp"
-        android:layout_height="48dp"
+        android:layout_width="80dp"
+        android:layout_height="39dp"
         android:text="@string/search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404" />
+        app:layout_constraintVertical_bias="0.417" />
 
     <Button
         android:id="@+id/button3"
@@ -114,7 +114,6 @@
         android:text="@string/enroll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
