@@ -22,8 +22,8 @@ public class GymMember extends UserData {
 
     public GymMember() {}
 
-    public void setEnrolledClasses(String[] ml) { enrolledClasses = new LinkedList<String>(Arrays.asList(ml)); }
-    public String[] getEnrolledClasses() { return enrolledClasses.toArray(new String[enrolledClasses.size()]); }
+    public void setEnrolledClasses(LinkedList<String> ml) { enrolledClasses = ml; }
+    public LinkedList<String> getEnrolledClasses() { return enrolledClasses; }
     public void enrollClass(FitClass ud) { enrolledClasses.add(ud.getUid()); }
     public void unenrollClass(FitClass ud) { enrolledClasses.remove(ud.getUid()); }
 
