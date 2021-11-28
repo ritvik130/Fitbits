@@ -4,6 +4,7 @@ import com.google.firebase.firestore.Exclude;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 import me.seg.fitbites.firebase.FirestoreDatabase;
 import me.seg.fitbites.firebase.OnTaskComplete;
@@ -22,7 +23,7 @@ public class GymMember extends UserData {
 
     public GymMember() {}
 
-    public void setEnrolledClasses(LinkedList<String> ml) { enrolledClasses = ml; }
+    public void setEnrolledClasses(List<String> ml) { enrolledClasses = new LinkedList<>(ml); }
     public LinkedList<String> getEnrolledClasses() { return enrolledClasses; }
     public void enrollClass(FitClass ud) { enrolledClasses.add(ud.getUid()); }
     public void unenrollClass(FitClass ud) { enrolledClasses.remove(ud.getUid()); }
