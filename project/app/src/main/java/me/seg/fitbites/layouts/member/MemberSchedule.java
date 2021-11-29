@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import me.seg.fitbites.MainActivity;
 import me.seg.fitbites.R;
@@ -31,10 +33,10 @@ public class MemberSchedule extends AppCompatActivity {
     FirestoreDatabase db;
     String classUid;
     GymMember gm;
-    ArrayList<FitClass> classes;
-    ArrayList<String> classesViewData;
-    ArrayList<String> instructorNames;
-    ArrayList<String> classNames;
+    List<FitClass> classes;
+    List<String> classesViewData;
+    List<String> instructorNames;
+    List<String> classNames;
     TextView lb;
     ListView scheduled;
     Button unenroll;
@@ -45,10 +47,10 @@ public class MemberSchedule extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_schedule);
         gm = (GymMember)AuthManager.getInstance().getCurrentUserData();
-        classes = new ArrayList<>();
-        classesViewData = new ArrayList<>();
-        instructorNames = new ArrayList<>();
-        classNames = new ArrayList<>();
+        classes = new LinkedList<>();
+        classesViewData = new LinkedList<>();
+        instructorNames = new LinkedList<>();
+        classNames = new LinkedList<>();
         unenroll = findViewById(R.id.member_drop_button);
         scheduled = findViewById(R.id.member_scheduled_classes);
         lb = findViewById(R.id.member_select_text);
@@ -57,13 +59,13 @@ public class MemberSchedule extends AppCompatActivity {
         if(gm.getEnrolledClasses().size()==0){
             lb.setText("You have not enrolled in any classes yet.");
         }
-        viewEnrolledClasses(gm, new OnTaskComplete<ArrayList<FitClass>>() {
+        viewEnrolledClasses(gm, new OnTaskComplete<List<FitClass>>() {
             @Override
-            public void onComplete(ArrayList<FitClass> result) {
+            public void onComplete(List<FitClass> result) {
                 classes = result;
-                convertToString(classes, new OnTaskComplete<ArrayList<String>>() {
+                convertToString(classes, new OnTaskComplete<LinkedList<String>>() {
                     @Override
-                    public void onComplete(ArrayList<String> viewStringResult) {
+                    public void onComplete(LinkedList<String> viewStringResult) {
                         for(int i =0; i<classes.size(); i++){
                             classesViewData.add(classNames.get(i)+" is taught by "+instructorNames.get(i)+" on "+classes.get(i).getDate()+" at "+classes.get(i).getTime());
                         }
@@ -99,7 +101,7 @@ public class MemberSchedule extends AppCompatActivity {
         });
     }
 
-    public void viewEnrolledClasses(GymMember gm, OnTaskComplete<ArrayList<FitClass>> onTaskComplete) {
+    public void viewEnrolledClasses(GymMember gm, OnTaskComplete<List<FitClass>> onTaskComplete) {
         int gmSize = gm.getEnrolledClasses().size();
         if (gmSize == 0) {
             return;
@@ -114,7 +116,7 @@ public class MemberSchedule extends AppCompatActivity {
             });
         }
     }
-    public void convertToString(ArrayList<FitClass> classes, OnTaskComplete<ArrayList<String>> onTaskComplete){
+    public void convertToString(List<FitClass> classes, OnTaskComplete<LinkedList<String>> onTaskComplete){
         int size = classes.size();
         for(int i =0; i<size; i++){
             db.getInstance().getUserData(classes.get(i).getTeacherUID(), new OnTaskComplete<UserData>() {
@@ -151,7 +153,7 @@ public class MemberSchedule extends AppCompatActivity {
     }
     public void unenrollUser(){
         gm.unenrollClass(classUid);
-        f.unenrollMember(AuthManager.getInstance().getCurrentUserData());
+        //f.unenrollMember(AuthManager.getInstance().getCurrentUserData());
         db.getInstance().setUserData(gm);
         Intent i = getIntent();
         finish();
