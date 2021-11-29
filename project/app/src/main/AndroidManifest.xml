@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitbites">
         <activity
+            android:name=".layouts.member.MemberSchedule"
+            android:exported="true" />
+        <activity
             android:name=".layouts.instructor.InstructorAddClassActivity"
             android:exported="true" />
         <activity
@@ -67,6 +70,7 @@
         <activity
             android:name=".layouts.admin.AdminDeleteClassActivity"
             android:exported="true" />
+
     </application>
 
 </manifest>

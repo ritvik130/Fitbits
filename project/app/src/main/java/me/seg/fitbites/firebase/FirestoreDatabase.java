@@ -213,7 +213,7 @@ public class FirestoreDatabase {
     }
 
     public void setUserData(UserData data) {
-        Log.i("Test", "Adding to database");
+        Log.e("Test", data.getFirstName());
         db.collection(COLLECTION_USER_INFO)
                 .document(data.getUid())
                 .set(data)
