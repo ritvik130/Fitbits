@@ -14,7 +14,7 @@ import me.seg.fitbites.firebase.AuthManager;
 
 public class MemberWelcomeActivity extends AppCompatActivity {
     private TextView title;
-    private Button signout;
+    private Button signout, classes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,13 @@ public class MemberWelcomeActivity extends AppCompatActivity {
 
         title = findViewById(R.id.Mem_Title);
         title.setText(title.getText().toString().replace("x", AuthManager.getInstance().getCurrentUserData().getFirstName()));
-
+        classes = findViewById(R.id.AddClassBtn);
+        classes.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent i = new Intent(MemberWelcomeActivity.this,MemberSchedule.class );
+                startActivity(i);
+            }
+        });
         signout = (Button) findViewById(R.id.welGm_signout);
         signout.setOnClickListener(new View.OnClickListener() {
             @Override

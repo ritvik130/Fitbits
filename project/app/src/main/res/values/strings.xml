@@ -76,7 +76,7 @@
     <string name="Inst_Welcome_addBtn">Add Class</string>
     <string name="Inst_Welcome_editBtn">Edit Class</string>
     <string name="Inst_Welcome_DeleteBtn">Delete Class</string>
-    <string name = "Inst_Welcome_find">See All Classes</string>
+    <string name="Inst_Welcome_find">See All Classes</string>
     <string name="Inst_Welcome_noClass">You have no Scheduled Classes!</string>
     <string name="Inst_Welcome_signout">Sign Out</string>
 
@@ -109,15 +109,18 @@
     <string name="Inst_cancel_rem">Remove</string>
 
     <!-- Search Class Screen -->
-    <string name = "Inst_search_class">Search for a class</string>
-    <string name = "Inst_name">Name</string>
-    <string name = "Inst_class">Class</string>
-    <string name = "Inst_switch">Click Button to switch search settings</string>
-    <string name = "Inst_search">Search</string>
-    <string name = "Inst_name_toggle">Enter instructor last name</string>
-    <string name = "Inst_class_toggle">Enter name of class</string>
+    <string name="Inst_search_class">Search for a class</string>
+    <string name="Inst_name">Name</string>
+    <string name="Inst_class">Class</string>
+    <string name="Inst_switch">Click Button to switch search settings</string>
+    <string name="Inst_search">Search</string>
+    <string name="Inst_name_toggle">Enter instructor last name</string>
+    <string name="Inst_class_toggle">Enter name of class</string>
 
     <!-- Member Screens -->
+    <string name = "Mem_Edit_Class">Edit your class schedule</string>
+    <string name = "Mem_Select_Label">Select class to drop</string>
+    <string name = "Mem_drop">Un-enroll</string>
     <!-- Welcome Screen -->
     <string name="Mem_Welcome_title">Welcome Gym Member\nx!</string>
     <string name="Mem_Welcome_noClass">You have no Scheduled Classes!</string>

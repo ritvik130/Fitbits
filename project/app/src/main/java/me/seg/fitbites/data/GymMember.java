@@ -2,6 +2,7 @@ package me.seg.fitbites.data;
 
 import com.google.firebase.firestore.Exclude;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,6 +28,7 @@ public class GymMember extends UserData {
     public LinkedList<String> getEnrolledClasses() { return enrolledClasses; }
     public void enrollClass(FitClass ud) { enrolledClasses.add(ud.getUid()); }
     public void unenrollClass(FitClass ud) { enrolledClasses.remove(ud.getUid()); }
+    public void unenrollClass(String ud){enrolledClasses.remove(ud);}
 
     public void checkClassCollision(FitClass fc, OnTaskComplete<Boolean> otc) {
         //object to do the collision check all at once asynchronously through the
