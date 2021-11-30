@@ -14,7 +14,7 @@ import me.seg.fitbites.firebase.AuthManager;
 
 public class MemberWelcomeActivity extends AppCompatActivity {
     private TextView title;
-    private Button signout, classes;
+    private Button signout, classes, enrol;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +35,14 @@ public class MemberWelcomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AuthManager.getInstance().signoutUser();
                 Intent i = new Intent(MemberWelcomeActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+        enrol = (Button) findViewById(R.id.enrollButton);
+        enrol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MemberWelcomeActivity.this, MemberEnrollClass.class );
                 startActivity(i);
             }
         });

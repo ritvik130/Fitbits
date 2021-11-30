@@ -1,5 +1,7 @@
 package me.seg.fitbites.data;
 
+import android.util.Log;
+
 import com.google.firebase.firestore.Exclude;
 
 import java.util.ArrayList;
@@ -48,6 +50,7 @@ public class GymMember extends UserData {
             synchronized void complete(boolean v) {
                 if(!completed) {
                     completed = true;
+                    Log.w("TEST", "providing " + v);
                     otc.onComplete(v);
                 }
             }
@@ -57,13 +60,18 @@ public class GymMember extends UserData {
                         @Override
                         public void onComplete(FitClass result) {
                             if(result != null) {
-                                //check if they collide by day
-                                if(result.getDateObj() == fc.getDateObj()) {
-                                    //check if time collides
-                                    if(checkTime(fc.getTime(), fc.getEndTime(), result.getTime(), result.getEndTime())) {
-                                        complete(true);
-                                        return;
+                                if(!result.getUid().equals(fc.getUid())) {
+                                    //check if they collide by day
+                                    if(result.getDateObj() == fc.getDateObj()) {
+                                        //check if time collides
+                                        if(checkTime(fc.getTime(), fc.getEndTime(), result.getTime(), result.getEndTime())) {
+                                            complete(true);
+                                            return;
+                                        }
                                     }
+                                } else {
+                                    complete(true);
+                                    return;
                                 }
                             }
 
