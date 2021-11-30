@@ -37,6 +37,9 @@
             android:name=".layouts.instructor.InstructorEditClass_SearchActivity"
             android:exported="true" />
         <activity
+            android:name=".layouts.member.MemberEnrollClass"
+            android:exported="true" />
+        <activity
             android:name=".layouts.instructor.InstructorEditClassActivity"
             android:exported="true" />
         <activity

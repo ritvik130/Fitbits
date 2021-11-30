@@ -44,7 +44,9 @@ public class FitClass {
     }
 
 
-    public FitClass() {}
+    public FitClass() {
+        memberIdList = new LinkedList<>();
+    }
 
     public String getUid() { return uid; }
     public String getFitClassTypeUid(){ return fitClassTypeUid; };
@@ -111,9 +113,7 @@ public class FitClass {
     public void updateClass(){
         // edits a class
         // access to instructor
-        if(AuthManager.getInstance().getCurrentUserData() instanceof Instructor) {
-            FirestoreDatabase.getInstance().setFitClass(this);
-        }
+        FirestoreDatabase.getInstance().setFitClass(this);
     }
 
     public static void searchClass(String className, OnTaskComplete<FitClass[]> onTaskComplete){

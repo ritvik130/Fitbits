@@ -125,6 +125,7 @@
     <string name="Mem_Welcome_title">Welcome Gym Member\nx!</string>
     <string name="Mem_Welcome_noClass">You have no Scheduled Classes!</string>
     <string name="Mem_Welcome_ClassBtn">Classes</string>
+    <string name="Mem_Welcome_EnrolBtn">Enroll</string>
     <string name="Mem_Welcome_signout">Sign Out</string>
 
     <!-- Enroll Screen -->

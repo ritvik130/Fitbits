@@ -12,7 +12,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
 
 import me.seg.fitbites.MainCreateAccountActivity;
@@ -47,7 +49,19 @@ public class MemberEnrollClass extends AppCompatActivity {
         className = findViewById(R.id.editTextTextPersonName13);
         day = findViewById(R.id.editTextTextPersonName12);
 
+        enrollBTN = findViewById(R.id.button3);
 
+        bkBtn = findViewById(R.id.search_class_back_btn);
+
+        bkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(MemberEnrollClass.this, MemberWelcomeActivity.class);
+                startActivity(i);
+            }
+        });
+
+        searchBTN = findViewById(R.id.button);
 
         searchBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,62 +99,83 @@ public class MemberEnrollClass extends AppCompatActivity {
 
     public void placeIntoResults(FitClass[] r) {//put options in the box
 
-        LinearLayout layout = (LinearLayout) findViewById(R.id.layout2);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layout1);
         LinearLayout.LayoutParams layoutP = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
         layout.removeAllViews();
-        boolean addedAtLeastOne = false;
 
-        for (FitClass c : r) {
 
-            if (c.getDate().equals(Day)) {
+        FirestoreDatabase.getInstance().viewAllClassTypes(new OnTaskComplete<FitClassType[]>() {
+            @Override
+            public void onComplete(FitClassType[] result) {
+                HashMap<String, FitClassType> types = new HashMap<>();
 
-                addedAtLeastOne = true;
-                Button button = new Button(this);
-                button.setText("Capacity: " + c.getCapacity() + "Difficulty: " + c.getDifficulty());
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                if(result == null) {
+                    return;
+                }
 
-                        enrollBTN.setOnClickListener(new View.OnClickListener() {
+                for(FitClassType ft : result) {
+                    types.put(ft.getUid(), ft);
+                }
+
+                boolean addedAtLeastOne = false;
+
+                for (FitClass c : r) {
+
+                    if (c.getDate().equals(Day)) {
+
+                        addedAtLeastOne = true;
+                        Button button = new Button(MemberEnrollClass.this);
+                        FitClassType t = types.get(c.getFitClassTypeUid());
+                        int hour = c.getTime() / 60;
+                        int min = c.getTime() % 60;
+                        String time = String.format("%02d:%02d", hour, min);
+                        button.setText(t.getClassName() + " on " + c.getDate() + " at " + time +  " Capacity: " + c.getCapacity() + " Difficulty: " + c.getDifficulty());
+                        button.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
 
-                                GymMember user = (GymMember) AuthManager.getInstance().getCurrentUserData();
-                                user.checkClassCollision(c, new OnTaskComplete<Boolean>() {
+                                enrollBTN.setOnClickListener(new View.OnClickListener() {
                                     @Override
-                                    public void onComplete(Boolean result) {
-                                        if (!result) {
-                                            user.enrollClass(c);
-                                            c.enrollMember(user);
-                                        }
+                                    public void onClick(View v) {
+
+                                        GymMember user = (GymMember) AuthManager.getInstance().getCurrentUserData();
+                                        user.checkClassCollision(c, new OnTaskComplete<Boolean>() {
+                                            @Override
+                                            public void onComplete(Boolean result) {
+                                                if (!result && c.getCapacity() > c.getMemberListSize()) {
+                                                    user.enrollClass(c);
+                                                    FirestoreDatabase.getInstance().setUserData(user);
+                                                    c.enrollMember(user);
+                                                    c.updateClass();
+                                                } else {
+                                                    AlertDialog.Builder badinput = new AlertDialog.Builder(MemberEnrollClass.this);
+                                                    badinput.setTitle("*Error*");
+                                                    badinput.setMessage("Either your class conflicts with another class or the class is full");
+                                                    AlertDialog e = badinput.create();
+                                                    e.show();
+                                                }
+                                            }
+                                        });
+
+
                                     }
                                 });
 
-
                             }
                         });
-
+                        layout.addView(button, layoutP);
                     }
-                });
-                layout.addView(button, layoutP);
-            }
-            if (!addedAtLeastOne) {
-                TextView v = new TextView(this);
-                v.setText("No Classes Found");
-                layout.addView(v, layoutP);
-            }
+                    if (!addedAtLeastOne) {
+                        TextView v = new TextView(MemberEnrollClass.this);
+                        v.setText("No Classes Found");
+                        layout.addView(v, layoutP);
+                    }
 
-        bkBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(MemberEnrollClass.this, MemberWelcomeActivity.class);
-                startActivity(i);
+                }
+
             }
         });
-
-        }
-
 
     }
 
