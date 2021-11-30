@@ -24,7 +24,9 @@ public class GymMember extends UserData {
         enrolledClasses = new LinkedList<>();
     }
 
-    public GymMember() {}
+    public GymMember() {
+        enrolledClasses = new LinkedList<>();
+    }
 
     public void setEnrolledClasses(List<String> ml) { enrolledClasses = new LinkedList<>(ml); }
     public LinkedList<String> getEnrolledClasses() { return enrolledClasses; }
