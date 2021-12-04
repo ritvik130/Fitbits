@@ -3,6 +3,7 @@ package me.seg.fitbites.layouts.member;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -143,11 +144,16 @@ public class MemberEnrollClass extends AppCompatActivity {
                                         user.checkClassCollision(c, new OnTaskComplete<Boolean>() {
                                             @Override
                                             public void onComplete(Boolean result) {
+                                                Log.w("TESTER-----------", "RUNNING " + result);
+
                                                 if (!result && c.getCapacity() > c.getMemberListSize()) {
                                                     user.enrollClass(c);
                                                     FirestoreDatabase.getInstance().setUserData(user);
                                                     c.enrollMember(user);
                                                     c.updateClass();
+
+                                                    Intent i= new Intent(MemberEnrollClass.this, MemberWelcomeActivity.class);
+                                                    startActivity(i);
                                                 } else {
                                                     AlertDialog.Builder badinput = new AlertDialog.Builder(MemberEnrollClass.this);
                                                     badinput.setTitle("*Error*");

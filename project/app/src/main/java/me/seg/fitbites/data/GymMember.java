@@ -40,6 +40,7 @@ public class GymMember extends UserData {
 
         if(enrolledClasses.size() == 0) {
             otc.onComplete(false);
+            return;
         }
 
         class RunChecks {

@@ -40,7 +40,6 @@ public class MemberSchedule extends AppCompatActivity {
     TextView lb;
     ListView scheduled;
     Button unenroll;
-    AlertDialog confirm;
     FitClass f;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +88,7 @@ public class MemberSchedule extends AppCompatActivity {
             public void onClick(View v){
                 if(classUid==null)Toast.makeText(MemberSchedule.this, "No class selected", Toast.LENGTH_SHORT).show();
                 else{
-                    confirm = new AlertDialog.Builder(MemberSchedule.this).setTitle("Confirm").setMessage("Are you sure you would like to drop this class?").setPositiveButton("Yes", null).setNegativeButton("Cancel", null).show();
+                    AlertDialog confirm = new AlertDialog.Builder(MemberSchedule.this).setTitle("Confirm").setMessage("Are you sure you would like to drop this class?").setPositiveButton("Yes", null).setNegativeButton("Cancel", null).show();
                     Button yes = confirm.getButton(AlertDialog.BUTTON_POSITIVE);
                     yes.setOnClickListener(new View.OnClickListener(){
                         public void onClick(View v){
