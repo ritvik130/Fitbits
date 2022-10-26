@@ -1,5 +1,6 @@
 # Seg 2105 Term Project
 
+An andriod application for Gym management system
 ## Testing Details
 Confirmed to work properly (and see all elements properly) using:
 Device: Pixel 3a
